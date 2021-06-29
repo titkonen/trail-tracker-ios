@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AVU-st-sAN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fsv-5d-LjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fN-iYC" userLabel="Map Container View">
@@ -80,6 +80,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Track" image="location.north.line" catalog="system" id="Yae-eq-Nss"/>
+                    <navigationItem key="navigationItem" id="Vql-yJ-MG8"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Gp7-dS-cbT" id="S8x-2t-Gc6"/>
                         <outlet property="mapContainerView" destination="jTa-fN-iYC" id="j4p-iB-mjk"/>
@@ -200,7 +201,9 @@
                             <constraint firstItem="GCa-s4-mKg" firstAttribute="leading" secondItem="I1m-Hz-XGt" secondAttribute="trailing" constant="8" id="yy3-i9-C65"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Bes-e6-3h0"/>
+                    <navigationItem key="navigationItem" id="Bes-e6-3h0">
+                        <barButtonItem key="backBarButtonItem" title="back" id="98C-qY-NIV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="badgeImageView" destination="zDr-5S-tT0" id="YLJ-yp-40T"/>
                         <outlet property="badgeInfoButton" destination="r2A-xq-3iz" id="3Tu-67-JVX"/>
@@ -209,11 +212,12 @@
                         <outlet property="mapView" destination="jNH-dz-PwR" id="tCV-22-IMQ"/>
                         <outlet property="paceLabel" destination="uTs-fb-Ote" id="sKW-28-Wfy"/>
                         <outlet property="timeLabel" destination="tzf-nC-Vlh" id="BKH-Qh-qz0"/>
+                        <segue destination="uBb-oE-18m" kind="modal" id="pw0-CR-YcC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ra3-tu-a1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="-230.73463268365819"/>
+            <point key="canvasLocation" x="-236" y="-540"/>
         </scene>
         <!--Settings-->
         <scene sceneID="CyE-Bq-B4a">
@@ -480,6 +484,9 @@
             <point key="canvasLocation" x="-236" y="472"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pw0-CR-YcC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info" width="60" height="59.5"/>

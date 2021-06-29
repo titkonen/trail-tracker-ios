@@ -81,6 +81,7 @@ class NewRunViewController: UIViewController {
   private func stopRun() {
     mapContainerView.isHidden = false
     locationManager.stopUpdatingLocation()
+    timer?.invalidate()
   }
   
   func eachSecond() {
