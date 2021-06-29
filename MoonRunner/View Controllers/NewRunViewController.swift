@@ -5,7 +5,6 @@ import AVFoundation
 
 class NewRunViewController: UIViewController {
   
-  @IBOutlet weak var launchPromptStackView: UIStackView!
   @IBOutlet weak var dataStackView: UIStackView!
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet weak var stopButton: UIButton!
@@ -61,7 +60,6 @@ class NewRunViewController: UIViewController {
   }
   
   private func startRun() {
-  //  launchPromptStackView.isHidden = true
     dataStackView.isHidden = false
     startButton.isHidden = true
     stopButton.isHidden = false
@@ -79,7 +77,6 @@ class NewRunViewController: UIViewController {
   }
   
   private func stopRun() {
-  //  launchPromptStackView.isHidden = false
   //  dataStackView.isHidden = true
     startButton.isHidden = false
     stopButton.isHidden = true
@@ -163,8 +160,8 @@ extension NewRunViewController: CLLocationManagerDelegate {
         let delta = newLocation.distance(from: lastLocation)
         distance = distance + Measurement(value: delta, unit: UnitLength.meters)
         let coordinates = [lastLocation.coordinate, newLocation.coordinate]
-        mapView.add(MKPolyline(coordinates: coordinates, count: 2))
-        let region = MKCoordinateRegionMakeWithDistance(newLocation.coordinate, 500, 500)
+        mapView.addOverlay(MKPolyline(coordinates: coordinates, count: 2))
+        let region = MKCoordinateRegion.init(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
       }
       
