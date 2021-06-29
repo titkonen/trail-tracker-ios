@@ -22,11 +22,24 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WML-Dt-Sv2" userLabel="Container Stack View">
                                 <rect key="frame" x="20" y="52" width="374" height="717"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fN-iYC" userLabel="Map Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W43-gT-kza">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="215"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="uBb-oE-18m" id="pO4-po-8Lu"/>
+                                                </connections>
+                                            </mapView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XiM-Tb-dPF" userLabel="Top Stack View">
-                                        <rect key="frame" x="10" y="0.0" width="354" height="348.5"/>
+                                        <rect key="frame" x="78" y="0.0" width="218" height="348.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TEI-Oa-26B" userLabel="Launch Stack View">
-                                                <rect key="frame" x="68" y="0.0" width="218" height="174"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="218" height="174"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready To Launch??" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctd-6B-91X">
                                                         <rect key="frame" x="0.0" y="0.0" width="218" height="174"/>
@@ -37,7 +50,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sP3-YI-w8v" userLabel="Data Stack View">
-                                                <rect key="frame" x="0.0" y="174" width="354" height="174.5"/>
+                                                <rect key="frame" x="73.5" y="174" width="71.5" height="174.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp7-dS-cbT">
                                                         <rect key="frame" x="0.0" y="0.0" width="71.5" height="58.5"/>
@@ -60,33 +73,12 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="sP3-YI-w8v" firstAttribute="width" secondItem="XiM-Tb-dPF" secondAttribute="width" id="znb-nd-3QU"/>
-                                        </constraints>
                                     </stackView>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fN-iYC" userLabel="Map Container View">
-                                        <rect key="frame" x="10" y="358.5" width="354" height="0.0"/>
-                                        <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W43-gT-kza">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="0.0"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="uBb-oE-18m" id="pO4-po-8Lu"/>
-                                                </connections>
-                                            </mapView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="W43-gT-kza" secondAttribute="bottom" priority="750" id="JFE-jn-wah"/>
-                                            <constraint firstItem="W43-gT-kza" firstAttribute="top" secondItem="jTa-fN-iYC" secondAttribute="top" id="Non-Bf-UoR"/>
-                                            <constraint firstAttribute="trailing" secondItem="W43-gT-kza" secondAttribute="trailing" id="R5S-3Z-ElX"/>
-                                            <constraint firstItem="W43-gT-kza" firstAttribute="leading" secondItem="jTa-fN-iYC" secondAttribute="leading" id="m9x-ZI-Cc3"/>
-                                        </constraints>
-                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rO9-n6-3aN" userLabel="Button Stack View">
-                                        <rect key="frame" x="30" y="368.5" width="314" height="348.5"/>
+                                        <rect key="frame" x="156" y="368.5" width="62" height="348.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHH-kB-UAe">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="348.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="348.5"/>
                                                 <color key="backgroundColor" red="0.0" green="0.57344603540000005" blue="0.27058163289999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <state key="normal" title="Start!">
@@ -97,7 +89,7 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3O-Ns-MFS">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="0.0"/>
                                                 <color key="backgroundColor" red="0.9991341233253479" green="0.11384636908769608" blue="0.1422920823097229" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <state key="normal" title="Stop">
@@ -110,11 +102,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="rO9-n6-3aN" firstAttribute="width" secondItem="WML-Dt-Sv2" secondAttribute="width" constant="-60" id="oS0-pa-jfD"/>
-                                    <constraint firstItem="jTa-fN-iYC" firstAttribute="width" secondItem="XiM-Tb-dPF" secondAttribute="width" id="pUe-DR-tLj"/>
-                                    <constraint firstItem="XiM-Tb-dPF" firstAttribute="width" secondItem="WML-Dt-Sv2" secondAttribute="width" constant="-20" id="yas-oQ-ZQi"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
