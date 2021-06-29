@@ -5,7 +5,6 @@ import AVFoundation
 
 class NewRunViewController: UIViewController {
   
-  @IBOutlet weak var dataStackView: UIStackView!
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet weak var stopButton: UIButton!
   @IBOutlet weak var distanceLabel: UILabel!
@@ -13,7 +12,11 @@ class NewRunViewController: UIViewController {
   @IBOutlet weak var paceLabel: UILabel!
   @IBOutlet weak var mapContainerView: UIView!
   @IBOutlet weak var mapView: MKMapView!
-  
+    
+    
+    @IBOutlet weak var startTrackingButton: UIButton!
+    @IBOutlet weak var stopTrackingButton: UIButton!
+    
   private var run: Run?
   private let locationManager = LocationManager.shared
   private var seconds = 0
@@ -29,15 +32,42 @@ class NewRunViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-   // dataStackView.isHidden = true
+
     mapContainerView.isHidden = false
   }
+    
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     timer?.invalidate()
-    locationManager.stopUpdatingLocation()
+    //locationManager.stopUpdatingLocation()
   }
   
+    @IBAction func startTrackingPressed(_ sender: UIButton) {
+        startRun()
+    }
+    
+    @IBAction func stopTrackingPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "End run?",
+                                                message: "Do you wish to end your run?",
+                                                preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+          self.stopRun()
+          self.saveRun()
+          self.performSegue(withIdentifier: .details, sender: nil)
+        })
+        alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
+          self.stopRun()
+          _ = self.navigationController?.popToRootViewController(animated: true)
+        })
+        
+        present(alertController, animated: true)
+        
+    }
+    
+    
+    
+    
   @IBAction func startTapped() {
     startRun()
   }
@@ -61,7 +91,6 @@ class NewRunViewController: UIViewController {
   }
   
   private func startRun() {
-    dataStackView.isHidden = false
     startButton.isHidden = true
     stopButton.isHidden = false
     mapContainerView.isHidden = false
@@ -78,7 +107,6 @@ class NewRunViewController: UIViewController {
   }
   
   private func stopRun() {
-  //  dataStackView.isHidden = true
     startButton.isHidden = false
     stopButton.isHidden = true
     mapContainerView.isHidden = false
