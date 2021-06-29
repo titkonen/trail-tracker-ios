@@ -5,14 +5,11 @@ import AVFoundation
 
 class NewRunViewController: UIViewController {
   
-  @IBOutlet weak var startButton: UIButton!
-  @IBOutlet weak var stopButton: UIButton!
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var paceLabel: UILabel!
   @IBOutlet weak var mapContainerView: UIView!
   @IBOutlet weak var mapView: MKMapView!
-    
     
     @IBOutlet weak var startTrackingButton: UIButton!
     @IBOutlet weak var stopTrackingButton: UIButton!
@@ -64,35 +61,10 @@ class NewRunViewController: UIViewController {
         present(alertController, animated: true)
         
     }
-    
-    
-    
-    
-  @IBAction func startTapped() {
-    startRun()
-  }
-  
-  @IBAction func stopTapped() {
-    let alertController = UIAlertController(title: "End run?",
-                                            message: "Do you wish to end your run?",
-                                            preferredStyle: .actionSheet)
-    alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-    alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
-      self.stopRun()
-      self.saveRun()
-      self.performSegue(withIdentifier: .details, sender: nil)
-    })
-    alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
-      self.stopRun()
-      _ = self.navigationController?.popToRootViewController(animated: true)
-    })
-    
-    present(alertController, animated: true)
-  }
+
+
   
   private func startRun() {
-    startButton.isHidden = true
-    stopButton.isHidden = false
     mapContainerView.isHidden = false
     mapView.removeOverlays(mapView.overlays)
     
@@ -107,10 +79,7 @@ class NewRunViewController: UIViewController {
   }
   
   private func stopRun() {
-    startButton.isHidden = false
-    stopButton.isHidden = true
     mapContainerView.isHidden = false
-    
     locationManager.stopUpdatingLocation()
   }
   
