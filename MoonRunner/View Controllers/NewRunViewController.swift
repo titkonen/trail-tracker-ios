@@ -30,6 +30,7 @@ class NewRunViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
    // dataStackView.isHidden = true
+    mapContainerView.isHidden = false
   }
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
@@ -80,7 +81,7 @@ class NewRunViewController: UIViewController {
   //  dataStackView.isHidden = true
     startButton.isHidden = false
     stopButton.isHidden = true
-    mapContainerView.isHidden = true
+    mapContainerView.isHidden = false
     
     locationManager.stopUpdatingLocation()
   }
