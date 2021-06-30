@@ -45,7 +45,7 @@
 		187AF99C1EF2F78500C2B8E7 /* UnitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
 		187AF9A61EF2FC1200C2B8E7 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		187AF9A81EF3170700C2B8E7 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		18888DBF1E7F0FA80038A3AF /* MoonRunner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoonRunner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18888DBF1E7F0FA80038A3AF /* Trailhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trailhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18888DC21E7F0FA80038A3AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18888DC71E7F0FA80038A3AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18888DCA1E7F0FA80038A3AF /* MoonRunner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoonRunner.xcdatamodel; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		18888DB61E7F0FA80038A3AF = {
 			isa = PBXGroup;
 			children = (
-				18888DC11E7F0FA80038A3AF /* MoonRunner */,
+				18888DC11E7F0FA80038A3AF /* Trailhero */,
 				18888DC01E7F0FA80038A3AF /* Products */,
 			);
 			indentWidth = 2;
@@ -93,12 +93,12 @@
 		18888DC01E7F0FA80038A3AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18888DBF1E7F0FA80038A3AF /* MoonRunner.app */,
+				18888DBF1E7F0FA80038A3AF /* Trailhero.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18888DC11E7F0FA80038A3AF /* MoonRunner */ = {
+		18888DC11E7F0FA80038A3AF /* Trailhero */ = {
 			isa = PBXGroup;
 			children = (
 				18888DC21E7F0FA80038A3AF /* AppDelegate.swift */,
@@ -108,7 +108,7 @@
 				180924831EF434C5007CF38F /* Badges */,
 				18888DDA1E801FFB0038A3AF /* Supporting Files */,
 			);
-			path = MoonRunner;
+			path = Trailhero;
 			sourceTree = "<group>";
 		};
 		18888DDA1E801FFB0038A3AF /* Supporting Files */ = {
@@ -160,9 +160,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18888DBE1E7F0FA80038A3AF /* MoonRunner */ = {
+		18888DBE1E7F0FA80038A3AF /* Trailhero */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18888DD41E7F0FA80038A3AF /* Build configuration list for PBXNativeTarget "MoonRunner" */;
+			buildConfigurationList = 18888DD41E7F0FA80038A3AF /* Build configuration list for PBXNativeTarget "Trailhero" */;
 			buildPhases = (
 				18888DBB1E7F0FA80038A3AF /* Sources */,
 				18888DBC1E7F0FA80038A3AF /* Frameworks */,
@@ -172,9 +172,9 @@
 			);
 			dependencies = (
 			);
-			name = MoonRunner;
+			name = Trailhero;
 			productName = MoonRunner;
-			productReference = 18888DBF1E7F0FA80038A3AF /* MoonRunner.app */;
+			productReference = 18888DBF1E7F0FA80038A3AF /* Trailhero.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -200,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 18888DBA1E7F0FA80038A3AF /* Build configuration list for PBXProject "MoonRunner" */;
+			buildConfigurationList = 18888DBA1E7F0FA80038A3AF /* Build configuration list for PBXProject "Trailhero" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -214,7 +214,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18888DBE1E7F0FA80038A3AF /* MoonRunner */,
+				18888DBE1E7F0FA80038A3AF /* Trailhero */,
 			);
 		};
 /* End PBXProject section */
@@ -389,9 +389,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 88DAFJFCQA;
-				INFOPLIST_FILE = MoonRunner/Info.plist;
+				INFOPLIST_FILE = Trailhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kirijaki-trail-tracking";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirijaki-trailhero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
@@ -403,9 +403,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 88DAFJFCQA;
-				INFOPLIST_FILE = MoonRunner/Info.plist;
+				INFOPLIST_FILE = Trailhero/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kirijaki-trail-tracking";
+				PRODUCT_BUNDLE_IDENTIFIER = "kirijaki-trailhero";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 5.0;
@@ -415,7 +415,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18888DBA1E7F0FA80038A3AF /* Build configuration list for PBXProject "MoonRunner" */ = {
+		18888DBA1E7F0FA80038A3AF /* Build configuration list for PBXProject "Trailhero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18888DD21E7F0FA80038A3AF /* Debug */,
@@ -424,7 +424,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18888DD41E7F0FA80038A3AF /* Build configuration list for PBXNativeTarget "MoonRunner" */ = {
+		18888DD41E7F0FA80038A3AF /* Build configuration list for PBXNativeTarget "Trailhero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18888DD51E7F0FA80038A3AF /* Debug */,

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MoonRunner.xcodeproj">
+      location = "self:/Users/toniitkonen/Repos/Trailhero-ios/Trailhero.xcodeproj">
    </FileRef>
 </Workspace>
