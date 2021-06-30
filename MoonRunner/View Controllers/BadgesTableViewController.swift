@@ -4,10 +4,11 @@ import CoreData
 class BadgesTableViewController: UITableViewController {
   
   var statusList: [BadgeStatus]!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     statusList = BadgeStatus.badgesEarned(runs: getRuns())
+    
   }
   
   private func getRuns() -> [Run] {

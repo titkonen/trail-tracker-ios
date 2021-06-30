@@ -31,6 +31,8 @@ class NewRunViewController: UIViewController {
     super.viewDidLoad()
 
     mapContainerView.isHidden = false
+    print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+    //print(FileManager.default.currentDirectoryPath)
   }
     
   override func viewWillDisappear(_ animated: Bool) {

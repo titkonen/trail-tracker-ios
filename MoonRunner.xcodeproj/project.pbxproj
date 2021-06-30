@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1FCE65268C56E9009AEB84 /* SavedTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */; };
+		0F1FCE68268C5743009AEB84 /* Trailhero_trails.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FCE66268C5743009AEB84 /* Trailhero_trails.xcdatamodeld */; };
 		180924821EF33DE2007CF38F /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924811EF33DE2007CF38F /* MulticolorPolyline.swift */; };
 		180924851EF434F3007CF38F /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924841EF434F3007CF38F /* Badge.swift */; };
 		180924871EF4369B007CF38F /* BadgeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924861EF4369B007CF38F /* BadgeStatus.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTrailsViewController.swift; sourceTree = "<group>"; };
+		0F1FCE67268C5743009AEB84 /* Trailhero_trails.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trailhero_trails.xcdatamodel; sourceTree = "<group>"; };
 		180924811EF33DE2007CF38F /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
 		180924841EF434F3007CF38F /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		180924861EF4369B007CF38F /* BadgeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStatus.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				18888DD81E7F1D940038A3AF /* CoreDataStack.swift */,
 				18888DC91E7F0FA80038A3AF /* MoonRunner.xcdatamodeld */,
+				0F1FCE66268C5743009AEB84 /* Trailhero_trails.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				18CF26F01E80292C0097F88C /* RunDetailsViewController.swift */,
 				1809248A1EF43B39007CF38F /* BadgesTableViewController.swift */,
 				1809248C1EF43E84007CF38F /* BadgeDetailsViewController.swift */,
+				0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -243,10 +249,12 @@
 				18888DC31E7F0FA80038A3AF /* AppDelegate.swift in Sources */,
 				187AF9A71EF2FC1200C2B8E7 /* FormatDisplay.swift in Sources */,
 				180924871EF4369B007CF38F /* BadgeStatus.swift in Sources */,
+				0F1FCE68268C5743009AEB84 /* Trailhero_trails.xcdatamodeld in Sources */,
 				18350CE81E882A860054E1C6 /* StoryboardSupport.swift in Sources */,
 				1809248B1EF43B39007CF38F /* BadgesTableViewController.swift in Sources */,
 				187AF99D1EF2F78500C2B8E7 /* UnitExtensions.swift in Sources */,
 				1809248F1EF47583007CF38F /* BadgeAnnotation.swift in Sources */,
+				0F1FCE65268C56E9009AEB84 /* SavedTrailsViewController.swift in Sources */,
 				180924891EF438BD007CF38F /* BadgeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +436,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		0F1FCE66268C5743009AEB84 /* Trailhero_trails.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0F1FCE67268C5743009AEB84 /* Trailhero_trails.xcdatamodel */,
+			);
+			currentVersion = 0F1FCE67268C5743009AEB84 /* Trailhero_trails.xcdatamodel */;
+			path = Trailhero_trails.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		18888DC91E7F0FA80038A3AF /* MoonRunner.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

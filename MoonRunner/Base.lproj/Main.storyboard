@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AVU-st-sAN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fsv-5d-LjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fN-iYC" userLabel="Map Container View">
@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQ1-md-9zW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3338" y="-701"/>
+            <point key="canvasLocation" x="-2839" y="889"/>
         </scene>
         <!--Spots-->
         <scene sceneID="NEn-aO-nPb">
@@ -255,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOz-0W-1bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2181" y="-701"/>
+            <point key="canvasLocation" x="-1572" y="-923"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lpB-v5-9w4">
@@ -271,6 +271,7 @@
                         <segue destination="Wzu-UG-5UF" kind="relationship" relationship="viewControllers" id="hhh-mr-luF"/>
                         <segue destination="8q9-nm-r6u" kind="relationship" relationship="viewControllers" id="FbO-j6-X8c"/>
                         <segue destination="o3a-bD-6mE" kind="relationship" relationship="viewControllers" id="i79-et-ot8"/>
+                        <segue destination="drb-hw-iAg" kind="relationship" relationship="viewControllers" id="9jH-V4-UoC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noc-nr-lsx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -483,9 +484,81 @@
             </objects>
             <point key="canvasLocation" x="-236" y="472"/>
         </scene>
+        <!--SavedTrails-->
+        <scene sceneID="dwU-R3-WHC">
+            <objects>
+                <tableViewController id="cka-AN-IXM" userLabel="SavedTrails" customClass="SavedTrailsViewController" customModule="Trailhero_trails" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9JN-dx-uh0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="SavedTrailsCell" textLabel="PfL-Fv-Wbd" detailTextLabel="QqV-hk-HmP" style="IBUITableViewCellStyleSubtitle" id="m25-bf-CpT">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m25-bf-CpT" id="mke-Sg-BaL">
+                                    <rect key="frame" x="0.0" y="0.0" width="373.5" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PfL-Fv-Wbd">
+                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QqV-hk-HmP">
+                                            <rect key="frame" x="20" y="22.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cka-AN-IXM" id="JQX-iV-FF3"/>
+                            <outlet property="delegate" destination="cka-AN-IXM" id="Gx2-cT-zJS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Saved trails" id="fCz-qd-4gU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iCS-TB-Beb">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="cka-AN-IXM" id="qfP-IX-F27"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4n-Ut-zJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2954" y="-923"/>
+        </scene>
+        <!--Saved trails-->
+        <scene sceneID="qtp-E3-hi0">
+            <objects>
+                <navigationController id="drb-hw-iAg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Saved trails" image="list.bullet" catalog="system" id="7VH-UE-z3i"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hRf-eI-K7s">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.43529411759999997" green="0.81960784310000001" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cka-AN-IXM" kind="relationship" relationship="rootViewController" id="Bhk-n9-IAS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOT-Kg-Geg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4161" y="-923"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pw0-CR-YcC"/>
+        <segue reference="5VM-YX-X4F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="121"/>
@@ -500,6 +573,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
