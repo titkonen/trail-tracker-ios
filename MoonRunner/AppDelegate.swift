@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   lazy var persistentContainer: NSPersistentContainer = {
       
-      let container = NSPersistentContainer(name: "Trailhero_trails")
+      let container = NSPersistentContainer(name: "MoonRunner") // Trailhero_trails
       container.loadPersistentStores(completionHandler: { (storeDescription, error) in
           if let error = error as NSError? {
              
