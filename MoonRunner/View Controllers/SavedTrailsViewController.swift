@@ -5,7 +5,8 @@ class SavedTrailsViewController: UITableViewController {
 
 //    var savedtrails = [Savedtrails]()
     var run = [Run]()
-    
+    //let formattedDate = FormatDisplay.date(run.timestamp)
+  
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
     
     override func viewDidLoad() {
@@ -24,8 +25,12 @@ class SavedTrailsViewController: UITableViewController {
         //let aika = String(duration)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTrailsCell", for: indexPath)
-
+        
+      
         cell.textLabel?.text = String(run[indexPath.row].duration)
+        //cell.textLabel?.text = String(run[indexPath.row].duration)
+        cell.detailTextLabel?.text = String(run[indexPath.row].distance)
+        
       
         //cell.textLabel?.text = savedtrails[indexPath.row].title
         //cell.detailTextLabel?.text = String(trails[indexPath.row].duration)

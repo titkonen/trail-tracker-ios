@@ -18,14 +18,6 @@ class RunDetailsViewController: UIViewController {
     configureView()
   }
   
-  @IBAction func displayModeToggled(_ sender: UISwitch) {
-    UIView.animate(withDuration: 0.2) {
-      self.badgeImageView.alpha = sender.isOn ? 1 : 0
-      self.badgeInfoButton.alpha = sender.isOn ? 1 : 0
-      self.mapView.alpha = sender.isOn ? 0 : 1
-    }
-  }
-  
   @IBAction func infoButtonTapped() {
     let badge = Badge.best(for: run.distance)
     let alert = UIAlertController(title: badge.name,
