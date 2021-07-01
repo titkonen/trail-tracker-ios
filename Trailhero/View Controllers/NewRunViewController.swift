@@ -20,12 +20,12 @@ class NewRunViewController: UIViewController {
   private var timer: Timer?
   private var distance = Measurement(value: 0, unit: UnitLength.meters)
   private var locationList: [CLLocation] = []
-  private let successSound: AVAudioPlayer = {
-    guard let successSound = NSDataAsset(name: "success") else {
-      return AVAudioPlayer()
-    }
-    return try! AVAudioPlayer(data: successSound.data)
-  }()
+//  private let successSound: AVAudioPlayer = {
+//    guard let successSound = NSDataAsset(name: "success") else {
+//      return AVAudioPlayer()
+//    }
+//    return try! AVAudioPlayer(data: successSound.data)
+//  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -91,11 +91,9 @@ class NewRunViewController: UIViewController {
     let formattedPace = FormatDisplay.pace(distance: distance,
                                            seconds: seconds,
                                            outputUnit: UnitSpeed.minutesPerKilometer)
-    
     distanceLabel.text = "Distance:  \(formattedDistance)"
     timeLabel.text = "Time:  \(formattedTime)"
     paceLabel.text = "Pace:  \(formattedPace)"
-    
   }
   
   private func startLocationUpdates() {

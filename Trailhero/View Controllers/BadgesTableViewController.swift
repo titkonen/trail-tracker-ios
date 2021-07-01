@@ -8,7 +8,6 @@ class BadgesTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     statusList = BadgeStatus.badgesEarned(runs: getRuns())
-    
   }
   
   private func getRuns() -> [Run] {

@@ -22,20 +22,24 @@ class SavedTrailsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let aika = String(duration)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTrailsCell", for: indexPath)
         
-      
         cell.textLabel?.text = String(run[indexPath.row].duration)
-        //cell.textLabel?.text = String(run[indexPath.row].duration)
         cell.detailTextLabel?.text = String(run[indexPath.row].distance)
         
-      
         //cell.textLabel?.text = savedtrails[indexPath.row].title
         //cell.detailTextLabel?.text = String(trails[indexPath.row].duration)
-
+        
+        //let item = checklist.items[indexPath.row]
+      
         return cell
+    }
+  
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+      run.remove(at: indexPath.row)
+      
+      let indexPaths = [indexPath]
+      tableView.deleteRows(at: indexPaths, with: .automatic)
     }
  
 
