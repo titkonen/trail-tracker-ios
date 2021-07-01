@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ra3-tu-a1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2433" y="27"/>
+            <point key="canvasLocation" x="-2223" y="47"/>
         </scene>
         <!--Settings-->
         <scene sceneID="CyE-Bq-B4a">
@@ -499,6 +499,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="MWM-mT-AD7" kind="push" identifier="SavedTrailsDetailsVC" id="d4y-6V-7u0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -517,6 +520,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4n-Ut-zJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2433" y="-923"/>
+        </scene>
+        <!--Saved Trails DetailsVC-->
+        <scene sceneID="WyK-qq-EVh">
+            <objects>
+                <viewController id="MWM-mT-AD7" customClass="SavedTrailsDetailsVC" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ksH-kX-fgc"/>
+                        <viewControllerLayoutGuide type="bottom" id="iEl-hu-ECD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dcp-iK-Dh3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PÖÖ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-IG-a2H">
+                                <rect key="frame" x="186" y="438" width="36" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kVc-D8-gC2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHI-VS-cxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1351" y="-923"/>
         </scene>
         <!--Saved trails-->
         <scene sceneID="qtp-E3-hi0">

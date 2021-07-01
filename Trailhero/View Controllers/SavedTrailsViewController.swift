@@ -79,7 +79,9 @@ class SavedTrailsViewController: UITableViewController {
     func loadTrails() {
         
         let request : NSFetchRequest<Run> = Run.fetchRequest()
-        
+        let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+      
         do {
           run = try context.fetch(request)
         } catch {
@@ -88,33 +90,45 @@ class SavedTrailsViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    
-
-   
 }
 
 // MARK: - Navigation
 
-extension BadgesTableViewController: SegueHandlerType {
+extension SavedTrailsViewController: SegueHandlerType {
   enum SegueIdentifier: String {
-    case details = "BadgeDetailsViewController"
+    case details = "SavedTrailsDetailsVC"
   }
-
+  
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segueIdentifier(for: segue) {
     case .details:
-      let destination = segue.destination as! BadgeDetailsViewController
-      let indexPath = tableView.indexPathForSelectedRow!
-      destination.status = statusList[indexPath.row]
-    }
-  }
-
-  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    guard let segue = SegueIdentifier(rawValue: identifier) else { return false }
-    switch segue {
-    case .details:
-      guard let cell = sender as? UITableViewCell else { return false }
-      return cell.accessoryType == .disclosureIndicator
+      let destination = segue.destination as! SavedTrailsDetailsVC
+      //destination.run = run
     }
   }
 }
+
+
+//extension BadgesTableViewController: SegueHandlerType {
+//  enum SegueIdentifier: String {
+//    case details = "BadgeDetailsViewController"
+//  }
+//
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    switch segueIdentifier(for: segue) {
+//    case .details:
+//      let destination = segue.destination as! BadgeDetailsViewController
+//      let indexPath = tableView.indexPathForSelectedRow!
+//      destination.status = statusList[indexPath.row]
+//    }
+//  }
+//
+//  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//    guard let segue = SegueIdentifier(rawValue: identifier) else { return false }
+//    switch segue {
+//    case .details:
+//      guard let cell = sender as? UITableViewCell else { return false }
+//      return cell.accessoryType == .disclosureIndicator
+//    }
+//  }
+//}
