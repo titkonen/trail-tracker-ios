@@ -10,7 +10,7 @@
         <!--Track-->
         <scene sceneID="Qhi-ay-UJd">
             <objects>
-                <viewController id="uBb-oE-18m" customClass="NewRunViewController" customModule="MoonRunner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uBb-oE-18m" customClass="NewRunViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xfX-6x-8av"/>
                         <viewControllerLayoutGuide type="bottom" id="AVU-st-sAN"/>
@@ -94,12 +94,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7af-si-zQF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088.4057971014493" y="-230.35714285714283"/>
+            <point key="canvasLocation" x="-3688" y="27"/>
         </scene>
         <!--Run Details View Controller-->
         <scene sceneID="8ca-LL-54v">
             <objects>
-                <viewController id="edy-es-7gn" customClass="RunDetailsViewController" customModule="MoonRunner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="edy-es-7gn" customClass="RunDetailsViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8HS-KC-Bpd"/>
                         <viewControllerLayoutGuide type="bottom" id="DiD-yF-DJb"/>
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ra3-tu-a1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="-540"/>
+            <point key="canvasLocation" x="-2433" y="27"/>
         </scene>
         <!--Settings-->
         <scene sceneID="CyE-Bq-B4a">
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQ1-md-9zW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2839" y="889"/>
+            <point key="canvasLocation" x="-4968" y="950"/>
         </scene>
         <!--Spots-->
         <scene sceneID="NEn-aO-nPb">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOz-0W-1bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1572" y="-923"/>
+            <point key="canvasLocation" x="-4968" y="-923"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lpB-v5-9w4">
@@ -259,18 +259,18 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noc-nr-lsx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2838" y="72"/>
+            <point key="canvasLocation" x="-4967" y="28"/>
         </scene>
         <!--Saved tracks-->
         <scene sceneID="b6u-Ik-3jv">
             <objects>
-                <tableViewController id="Wzu-UG-5UF" customClass="BadgesTableViewController" customModule="MoonRunner" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Wzu-UG-5UF" customClass="BadgesTableViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="bH7-8r-feb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BadgeCell" id="bTm-Rr-Iau" customClass="BadgeCell" customModule="MoonRunner" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BadgeCell" id="bTm-Rr-Iau" customClass="BadgeCell" customModule="Trailhero" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bTm-Rr-Iau" id="faJ-OG-f9s">
@@ -344,12 +344,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSJ-Vw-bLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088" y="471"/>
+            <point key="canvasLocation" x="-3688" y="950"/>
         </scene>
         <!--Badge Details View Controller-->
         <scene sceneID="ukl-Zg-Ylf">
             <objects>
-                <viewController id="kzC-Iv-qkX" customClass="BadgeDetailsViewController" customModule="MoonRunner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kzC-Iv-qkX" customClass="BadgeDetailsViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M1q-ZF-k1Z"/>
                         <viewControllerLayoutGuide type="bottom" id="Cov-7W-KyP"/>
@@ -465,12 +465,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jsr-a6-33c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-236" y="472"/>
+            <point key="canvasLocation" x="-623" y="735"/>
         </scene>
         <!--SavedTrails-->
         <scene sceneID="dwU-R3-WHC">
             <objects>
-                <tableViewController id="cka-AN-IXM" userLabel="SavedTrails" customClass="SavedTrailsViewController" customModule="MoonRunner" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cka-AN-IXM" userLabel="SavedTrails" customClass="SavedTrailsViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9JN-dx-uh0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -516,7 +516,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4n-Ut-zJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2954" y="-923"/>
+            <point key="canvasLocation" x="-2433" y="-923"/>
         </scene>
         <!--Saved trails-->
         <scene sceneID="qtp-E3-hi0">
@@ -537,7 +537,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOT-Kg-Geg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4161" y="-923"/>
+            <point key="canvasLocation" x="-3688" y="-923"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

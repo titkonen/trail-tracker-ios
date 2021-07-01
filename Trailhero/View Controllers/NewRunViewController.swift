@@ -32,13 +32,11 @@ class NewRunViewController: UIViewController {
 
     mapContainerView.isHidden = false
     print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-    //print(FileManager.default.currentDirectoryPath)
   }
     
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     timer?.invalidate()
-    //locationManager.stopUpdatingLocation()
   }
   
     @IBAction func startTrackingPressed(_ sender: UIButton) {
@@ -46,8 +44,8 @@ class NewRunViewController: UIViewController {
     }
     
     @IBAction func stopTrackingPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "End run?",
-                                                message: "Do you wish to end your run?",
+        let alertController = UIAlertController(title: "Tracking end?",
+                                                message: "",
                                                 preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
@@ -59,18 +57,14 @@ class NewRunViewController: UIViewController {
           self.stopRun()
           _ = self.navigationController?.popToRootViewController(animated: true)
         })
-        
         present(alertController, animated: true)
-        
     }
 
-
-  
   private func startRun() {
     mapContainerView.isHidden = false
     mapView.removeOverlays(mapView.overlays)
-    
     seconds = 0
+    //distance = Measurement(value: 0, unit: UnitLength.meters)
     distance = Measurement(value: 0, unit: UnitLength.meters)
     locationList.removeAll()
     updateDisplay()
@@ -96,7 +90,7 @@ class NewRunViewController: UIViewController {
     let formattedTime = FormatDisplay.time(seconds)
     let formattedPace = FormatDisplay.pace(distance: distance,
                                            seconds: seconds,
-                                           outputUnit: UnitSpeed.minutesPerMile)
+                                           outputUnit: UnitSpeed.minutesPerKilometer)
     
     distanceLabel.text = "Distance:  \(formattedDistance)"
     timeLabel.text = "Time:  \(formattedTime)"

@@ -88,3 +88,29 @@ class SavedTrailsViewController: UITableViewController {
 
    
 }
+
+// MARK: - Navigation
+
+extension BadgesTableViewController: SegueHandlerType {
+  enum SegueIdentifier: String {
+    case details = "BadgeDetailsViewController"
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    switch segueIdentifier(for: segue) {
+    case .details:
+      let destination = segue.destination as! BadgeDetailsViewController
+      let indexPath = tableView.indexPathForSelectedRow!
+      destination.status = statusList[indexPath.row]
+    }
+  }
+
+  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    guard let segue = SegueIdentifier(rawValue: identifier) else { return false }
+    switch segue {
+    case .details:
+      guard let cell = sender as? UITableViewCell else { return false }
+      return cell.accessoryType == .disclosureIndicator
+    }
+  }
+}
