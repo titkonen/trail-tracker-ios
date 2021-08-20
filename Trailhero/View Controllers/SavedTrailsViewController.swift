@@ -3,8 +3,18 @@ import CoreData
 
 class SavedTrailsViewController: UITableViewController {
 
-//    var savedtrails = [Savedtrails]()
-    var run = [Run]()
+  // MARK: - Properties
+  //    var savedtrails = [Savedtrails]()
+  var run = [Run]()
+  //var paivat: [Date] = []
+  
+  lazy var paivaMuotoon: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .medium
+    return formatter
+  }()
+  
     //let formattedDate = FormatDisplay.date(run.timestamp)
   
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
@@ -23,9 +33,17 @@ class SavedTrailsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTrailsCell", for: indexPath)
-        
-        cell.textLabel?.text = String(run[indexPath.row].duration)
-        cell.detailTextLabel?.text = String(run[indexPath.row].distance)
+        //let walkDate = paivat[indexPath.row]
+      
+        guard let kavely = run[indexPath.row] as? Run,
+          let walkDate = kavely.timestamp as Date? else {
+            return cell
+        }
+      
+        cell.textLabel?.text = String(run[indexPath.row].distance)
+        //cell.detailTextLabel?.text = String(run[indexPath.row].distance)
+      
+        cell.detailTextLabel?.text = paivaMuotoon.string(from: walkDate)
         
         //cell.textLabel?.text = savedtrails[indexPath.row].title
         //cell.detailTextLabel?.text = String(trails[indexPath.row].duration)
@@ -79,7 +97,7 @@ class SavedTrailsViewController: UITableViewController {
     func loadTrails() {
         
         let request : NSFetchRequest<Run> = Run.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: false)
         request.sortDescriptors = [sortDescriptor]
       
         do {
@@ -109,26 +127,3 @@ extension SavedTrailsViewController: SegueHandlerType {
 }
 
 
-//extension BadgesTableViewController: SegueHandlerType {
-//  enum SegueIdentifier: String {
-//    case details = "BadgeDetailsViewController"
-//  }
-//
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    switch segueIdentifier(for: segue) {
-//    case .details:
-//      let destination = segue.destination as! BadgeDetailsViewController
-//      let indexPath = tableView.indexPathForSelectedRow!
-//      destination.status = statusList[indexPath.row]
-//    }
-//  }
-//
-//  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-//    guard let segue = SegueIdentifier(rawValue: identifier) else { return false }
-//    switch segue {
-//    case .details:
-//      guard let cell = sender as? UITableViewCell else { return false }
-//      return cell.accessoryType == .disclosureIndicator
-//    }
-//  }
-//}
