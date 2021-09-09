@@ -4,9 +4,10 @@ import CoreData
 class SavedTrailsViewController: UITableViewController {
 
   // MARK: - Properties
-  //    var savedtrails = [Savedtrails]()
   var run = [Run]()
-  //var paivat: [Date] = []
+  //fileprivate var filteredRuns = [Run]()
+  //var cachedText: String = ""
+  fileprivate let CustomCell:String = "CustomCell"
   
   lazy var paivaMuotoon: DateFormatter = {
     let formatter = DateFormatter()
@@ -19,49 +20,74 @@ class SavedTrailsViewController: UITableViewController {
   
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
     
+  // MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadTrails()
+        setupTableView()
+    }
+  
+    // MARK: FUNCTIONS
+    fileprivate func setupTableView() {
+        tableView.register(NoteCell.self, forCellReuseIdentifier: CustomCell)
     }
 
-    // MARK: - Table view data source
+    // MARK: Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return run.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTrailsCell", for: indexPath)
+      
+      let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! NoteCell ///Casting =>  as! NoteCell  to custom cell  //SavedTrailsCell
         //let walkDate = paivat[indexPath.row]
       
-        guard let kavely = run[indexPath.row] as? Run,
-          let walkDate = kavely.timestamp as Date? else {
-            return cell
-        }
+//        guard let kavely = run[indexPath.row] as? Run,
+//          let walkDate = kavely.timestamp as Date? else {
+//            return cell
+//        }
       
-        cell.textLabel?.text = String(run[indexPath.row].distance)
-        //cell.detailTextLabel?.text = String(run[indexPath.row].distance)
-      
-        cell.detailTextLabel?.text = paivaMuotoon.string(from: walkDate)
-        
+//        cell.textLabel?.text = String(run[indexPath.row].distance)
+//        cell.detailTextLabel?.text = paivaMuotoon.string(from: walkDate)
         //cell.textLabel?.text = savedtrails[indexPath.row].title
         //cell.detailTextLabel?.text = String(trails[indexPath.row].duration)
-        
-        //let item = checklist.items[indexPath.row]
       
-        return cell
+//      let lahetysLahtee = self.filteredRuns[indexPath.row]
+//      cell.noteData = lahetysLahtee
+      let noteForRow = self.run[indexPath.row]
+      cell.noteData = noteForRow
+      
+      return cell
     }
   
+
+  
+  
+    ///Push content to DetailController
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let noteDetailController = SavedTrailsDetailsVC()
+      let noteForRow = self.run[indexPath.row]
+      noteDetailController.noteData = noteForRow
+      
+      navigationController?.pushViewController(noteDetailController, animated: true)
+    }
+ 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       run.remove(at: indexPath.row)
       
       let indexPaths = [indexPath]
       tableView.deleteRows(at: indexPaths, with: .automatic)
     }
- 
+  
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+  
 
-    // MARK: - Add New text
+
+    // MARK: Add New text
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
