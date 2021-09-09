@@ -16,8 +16,6 @@ class SavedTrailsViewController: UITableViewController {
     return formatter
   }()
   
-    //let formattedDate = FormatDisplay.date(run.timestamp)
-  
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
     
   // MARK: VIEW LIFE CYCLE

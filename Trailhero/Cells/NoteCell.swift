@@ -1,7 +1,5 @@
 import UIKit
 
-// String(run[indexPath.row].distance)
-
 class NoteCell: UITableViewCell {
     
     var noteData: Run! {
@@ -9,8 +7,8 @@ class NoteCell: UITableViewCell {
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yy"
-            noteTitle.text = String(noteData.distance)
-            previewLabel.text = String(noteData.duration)
+            noteTitle.text = String(format: "%.1f",noteData.distance) + " m"
+            previewLabel.text = String(noteData.duration) + " sec"
             dateLabel.text = dateFormatter.string(from: noteData.timestamp ?? Date())
             
         }
@@ -37,8 +35,8 @@ class NoteCell: UITableViewCell {
     fileprivate var previewLabel: UILabel = {
         let label = UILabel()
         label.text = "The note text will go here for note preview..."
-        label.font = UIFont.systemFont(ofSize: 13, weight: .light)
-        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        label.textColor = .black
         //label.textColor = UIColor.gray.withAlphaComponent(0.8)
         return label
     }()
@@ -47,7 +45,7 @@ class NoteCell: UITableViewCell {
     fileprivate lazy var horizontalStackView: UIStackView = {
         let s = UIStackView(arrangedSubviews: [dateLabel, previewLabel, UIView()])
         s.axis = .horizontal
-        s.spacing = 10
+        s.spacing = 20
         s.alignment = .leading
         return s
     }()
@@ -56,7 +54,7 @@ class NoteCell: UITableViewCell {
     fileprivate lazy var verticalStackView: UIStackView = {
         let s = UIStackView(arrangedSubviews: [noteTitle, horizontalStackView])
         s.axis = .vertical
-        s.spacing = 4
+        s.spacing = 5
         
         s.translatesAutoresizingMaskIntoConstraints = false
         return s
