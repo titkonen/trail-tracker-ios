@@ -6,7 +6,7 @@ class NoteCell: UITableViewCell {
         didSet {
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yy"
+            dateFormatter.dateFormat = "MM/dd/yy hh:mm"
             noteTitle.text = String(format: "%.1f",noteData.distance) + " m"
             previewLabel.text = String(noteData.duration) + " sec"
             dateLabel.text = dateFormatter.string(from: noteData.timestamp ?? Date())
@@ -18,7 +18,7 @@ class NoteCell: UITableViewCell {
     fileprivate var noteTitle: UILabel = {
         let label = UILabel()
         label.text = "Places to take photos"
-        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         return label
     }()
 
@@ -26,7 +26,7 @@ class NoteCell: UITableViewCell {
     fileprivate var dateLabel: UILabel = {
         let label = UILabel()
         label.text = "4/6/2019"
-        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
         return label
     }()
@@ -35,7 +35,7 @@ class NoteCell: UITableViewCell {
     fileprivate var previewLabel: UILabel = {
         let label = UILabel()
         label.text = "The note text will go here for note preview..."
-        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.textColor = .black
         //label.textColor = UIColor.gray.withAlphaComponent(0.8)
         return label
@@ -43,7 +43,7 @@ class NoteCell: UITableViewCell {
     
     /// horizontal stack view
     fileprivate lazy var horizontalStackView: UIStackView = {
-        let s = UIStackView(arrangedSubviews: [dateLabel, previewLabel, UIView()])
+        let s = UIStackView(arrangedSubviews: [noteTitle, previewLabel, UIView()])
         s.axis = .horizontal
         s.spacing = 20
         s.alignment = .leading
@@ -52,7 +52,7 @@ class NoteCell: UITableViewCell {
     
     /// vertical stack view
     fileprivate lazy var verticalStackView: UIStackView = {
-        let s = UIStackView(arrangedSubviews: [noteTitle, horizontalStackView])
+        let s = UIStackView(arrangedSubviews: [dateLabel, horizontalStackView])
         s.axis = .vertical
         s.spacing = 5
         
@@ -63,7 +63,7 @@ class NoteCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     
-        contentView.backgroundColor = .cyan
+        contentView.backgroundColor = .white
       
         contentView.addSubview(verticalStackView)
         verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true

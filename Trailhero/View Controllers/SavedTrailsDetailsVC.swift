@@ -1,32 +1,41 @@
 import Foundation
 import UIKit
 
+//dateLabel.text = dateFormatter.string(from: noteData.timestamp ?? Date())
+
 class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
   
   // MARK: PROPERTIES
   var run = [Run]()
 
+  let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, YYYY hh:mm"
+        //dateFormatter.dateFormat = "MM/dd/yy"
+        return dateFormatter
+  }()
+  
+
+
+
+  
   var noteData: Run! {
       didSet {
         distanceLabel.text = String(noteData.distance)
         durationLabel.text = String(noteData.duration)
-        //dateLabel.text = dateFormatter.string(from: noteData.date ?? Date())
+        dateLabel.text = dateFormatter.string(from: noteData.timestamp ?? Date())
       }
   }
   
-//  let dateFormatter: DateFormatter = {
-//      let dateFormatter = DateFormatter()
-//      dateFormatter.dateFormat = "MMMM dd, YYYY hh:mm"
-//      return dateFormatter
-//  }()
+
   
   fileprivate lazy var dateLabel: UILabel = {
       let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
       label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
       label.textColor = .black
-      //label.text = dateFormatter.string(from: Date())
-      label.text = "HELLO HELLO 3"
+      label.text = dateFormatter.string(from: noteData.timestamp ?? Date())
+      //label.text = "HELLO HELLO 3"
       label.textAlignment = .center
       return label
   }()
