@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AVU-st-sAN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fsv-5d-LjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fN-iYC" userLabel="Map Container View">
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="-2223" y="47"/>
         </scene>
-        <!--Settings-->
+        <!--Info-->
         <scene sceneID="CyE-Bq-B4a">
             <objects>
                 <viewController id="o3a-bD-6mE" sceneMemberID="viewController">
@@ -213,13 +213,22 @@
                     <view key="view" contentMode="scaleToFill" id="QgG-Ko-rez">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info and privacy policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Try-j8-ntX">
+                                <rect key="frame" x="60" y="100" width="308" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="Ls6-ao-MKn"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="info.circle" catalog="system" id="Ls6-ao-MKn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQ1-md-9zW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4968" y="950"/>
+            <point key="canvasLocation" x="-4968.115942028986" y="949.55357142857133"/>
         </scene>
         <!--Spots-->
         <scene sceneID="NEn-aO-nPb">
@@ -232,13 +241,22 @@
                     <view key="view" contentMode="scaleToFill" id="Jp8-sQ-guf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBS-s2-QUd">
+                                <rect key="frame" x="60" y="100" width="147" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Spots" image="mappin.circle" catalog="system" id="eOC-oW-6m5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOz-0W-1bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4968" y="-923"/>
+            <point key="canvasLocation" x="-4968.115942028986" y="-923.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lpB-v5-9w4">
@@ -251,10 +269,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="uBb-oE-18m" kind="relationship" relationship="viewControllers" id="5VM-YX-X4F"/>
-                        <segue destination="Wzu-UG-5UF" kind="relationship" relationship="viewControllers" id="hhh-mr-luF"/>
+                        <segue destination="drb-hw-iAg" kind="relationship" relationship="viewControllers" id="9jH-V4-UoC"/>
                         <segue destination="8q9-nm-r6u" kind="relationship" relationship="viewControllers" id="FbO-j6-X8c"/>
                         <segue destination="o3a-bD-6mE" kind="relationship" relationship="viewControllers" id="i79-et-ot8"/>
-                        <segue destination="drb-hw-iAg" kind="relationship" relationship="viewControllers" id="9jH-V4-UoC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noc-nr-lsx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -598,11 +615,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pw0-CR-YcC"/>
+        <segue reference="5VM-YX-X4F"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="info" width="60" height="59.5"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="location.north.line" catalog="system" width="82" height="128"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
