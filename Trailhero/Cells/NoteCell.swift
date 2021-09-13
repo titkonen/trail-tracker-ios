@@ -19,6 +19,7 @@ class NoteCell: UITableViewCell {
         let label = UILabel()
         label.text = "Places to take photos"
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        label.textColor = .white
         return label
     }()
 
@@ -27,7 +28,7 @@ class NoteCell: UITableViewCell {
         let label = UILabel()
         label.text = "4/6/2019"
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .gray
+        label.textColor = UIColor.white.withAlphaComponent(0.5)
         return label
     }()
         
@@ -36,7 +37,7 @@ class NoteCell: UITableViewCell {
         let label = UILabel()
         label.text = "The note text will go here for note preview..."
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        label.textColor = .black
+        label.textColor = .white
         //label.textColor = UIColor.gray.withAlphaComponent(0.8)
         return label
     }()
@@ -63,7 +64,7 @@ class NoteCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = UIColor(red: 2/255, green: 89/255, blue: 89/255, alpha: 1)
       
         contentView.addSubview(verticalStackView)
         verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true

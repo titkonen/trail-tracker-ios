@@ -1,10 +1,10 @@
 import UIKit
 import CoreLocation
 import MapKit
-import AVFoundation
 
 class NewRunViewController: UIViewController {
   
+  // MARK: OUTLETS
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var paceLabel: UILabel!
@@ -14,24 +14,27 @@ class NewRunViewController: UIViewController {
     @IBOutlet weak var startTrackingButton: UIButton!
     @IBOutlet weak var stopTrackingButton: UIButton!
     
+  // MARK: PROPERTIES
   private var run: Run?
   private let locationManager = LocationManager.shared
   private var seconds = 0
   private var timer: Timer?
   private var distance = Measurement(value: 0, unit: UnitLength.meters)
   private var locationList: [CLLocation] = []
-//  private let successSound: AVAudioPlayer = {
-//    guard let successSound = NSDataAsset(name: "success") else {
-//      return AVAudioPlayer()
-//    }
-//    return try! AVAudioPlayer(data: successSound.data)
-//  }()
 
+  // MARK: VIEW LIFE CYCLE
   override func viewDidLoad() {
     super.viewDidLoad()
 
     mapContainerView.isHidden = false
     print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+    
+    startTrackingButton.backgroundColor = UIColor(red: 4/255, green: 191/255, blue: 191/255, alpha: 1)
+    startTrackingButton.layer.cornerRadius = 12.0
+    startTrackingButton.tintColor = .white
+    startTrackingButton.frame.size = CGSize(width: 150, height: 48)
+    startTrackingButton.center.x = self.view.center.x
+    
   }
     
   override func viewWillDisappear(_ animated: Bool) {
@@ -53,7 +56,7 @@ class NewRunViewController: UIViewController {
           self.saveRun()
           self.performSegue(withIdentifier: .details, sender: nil)
         })
-        alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
+        alertController.addAction(UIAlertAction(title: "End tracking", style: .destructive) { _ in
           self.stopRun()
           _ = self.navigationController?.popToRootViewController(animated: true)
         })
@@ -64,7 +67,6 @@ class NewRunViewController: UIViewController {
     mapContainerView.isHidden = false
     mapView.removeOverlays(mapView.overlays)
     seconds = 0
-    //distance = Measurement(value: 0, unit: UnitLength.meters)
     distance = Measurement(value: 0, unit: UnitLength.meters)
     locationList.removeAll()
     updateDisplay()
@@ -91,7 +93,7 @@ class NewRunViewController: UIViewController {
     let formattedPace = FormatDisplay.pace(distance: distance,
                                            seconds: seconds,
                                            outputUnit: UnitSpeed.minutesPerKilometer)
-    distanceLabel.text = "Distance:  \(formattedDistance)"
+    distanceLabel.text = "Distance:  \(formattedDistance) km"
     timeLabel.text = "Time:  \(formattedTime)"
     paceLabel.text = "Pace:  \(formattedPace)"
   }

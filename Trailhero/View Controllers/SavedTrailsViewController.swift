@@ -5,8 +5,7 @@ class SavedTrailsViewController: UITableViewController {
 
   // MARK: - Properties
   var run = [Run]()
-  //fileprivate var filteredRuns = [Run]()
-  //var cachedText: String = ""
+
   fileprivate let CustomCell:String = "CustomCell"
   
   lazy var paivaMuotoon: DateFormatter = {
@@ -22,8 +21,17 @@ class SavedTrailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadTrails()
-        setupTableView()
+    }
+  
+    override func viewWillAppear(_ animated: Bool) {
+      super.viewWillAppear(animated)
+      
+//      view.backgroundColor = .blue
+//      print("viewWillAppear is red")
+      
+      loadTrails()
+      setupTableView()
+      
     }
   
     // MARK: FUNCTIONS
@@ -31,7 +39,7 @@ class SavedTrailsViewController: UITableViewController {
         tableView.register(NoteCell.self, forCellReuseIdentifier: CustomCell)
     }
 
-    // MARK: Table view data source
+    // MARK: TABLE VIEW DATA SOURCE
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return run.count
@@ -60,9 +68,6 @@ class SavedTrailsViewController: UITableViewController {
       return cell
     }
   
-
-  
-  
     ///Push content to DetailController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       let noteDetailController = SavedTrailsDetailsVC()
@@ -82,41 +87,18 @@ class SavedTrailsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-  
-
-
-    // MARK: Add New text
-    
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
-//        var textField = UITextField()
-//        let alert = UIAlertController(title: "Add New text", message: "", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "Add", style: .default) { (action) in
-//            let newTrails = Savedtrails(context: self.context)
-//            newTrails.title = textField.text!
-//            self.savedtrails.append(newTrails)
-//            self.saveTrails()
-//        }
-//        alert.addAction(action)
-//        alert.addTextField { (field) in
-//            textField = field
-//            textField.placeholder = "Add a new text"
-//        }
-//        present(alert, animated: true, completion: nil)
-        
-    }
     
     // MARK: - CRUD Functions
     
-    func saveTrails() {
-         
-         do {
-            try context.save()
-         } catch {
-            print("Error saving context \(error)")
-         }
-         tableView.reloadData()
-    }
+//    func saveTrails() {
+//
+//         do {
+//            try context.save()
+//         } catch {
+//            print("Error saving context \(error)")
+//         }
+//         tableView.reloadData()
+//    }
     
     func loadTrails() {
         
@@ -131,23 +113,10 @@ class SavedTrailsViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-
-}
-
-// MARK: - Navigation
-
-extension SavedTrailsViewController: SegueHandlerType {
-  enum SegueIdentifier: String {
-    case details = "SavedTrailsDetailsVC"
-  }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segueIdentifier(for: segue) {
-    case .details:
-      let destination = segue.destination as! SavedTrailsDetailsVC
-      //destination.run = run
-    }
-  }
-}
+
+} // End of main class
+
+
 
 
