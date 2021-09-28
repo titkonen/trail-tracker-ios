@@ -257,14 +257,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Spots" id="R1O-op-L3w">
-                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="yuf-Vn-pzr">
-                                            <color key="tintColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="addSpotsButtonPressed:" destination="8q9-nm-r6u" id="6Y1-4T-TAg"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Spots" id="R1O-op-L3w"/>
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="latitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkM-TA-D5D">
@@ -281,14 +274,32 @@
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is4-yV-d4e">
+                                <rect key="frame" x="20" y="91" width="298" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-oR-b1s">
+                                <rect key="frame" x="23" y="775" width="155" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Get spot">
+                                    <color key="titleColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getSpotPressed:" destination="8q9-nm-r6u" eventType="touchUpInside" id="zrw-fg-eav"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Spots" image="mappin.circle" catalog="system" id="eOC-oW-6m5"/>
                     <connections>
+                        <outlet property="getSpot" destination="xfk-oR-b1s" id="WWR-C6-uTg"/>
                         <outlet property="latitudeLabel" destination="HkM-TA-D5D" id="RTo-NH-WYp"/>
                         <outlet property="longitudeLabel" destination="ZmE-1e-Jz7" id="3rA-Lq-MeU"/>
-                        <outlet property="spotsButton" destination="yuf-Vn-pzr" id="hYx-Ku-zhp"/>
+                        <outlet property="messageLabel" destination="is4-yV-d4e" id="1mO-e3-ZiF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOz-0W-1bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -671,7 +682,6 @@
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="location.north.line" catalog="system" width="82" height="128"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="spaceship-gold" width="100" height="137"/>
         <image name="spaceship-silver" width="100" height="137"/>
         <systemColor name="systemYellowColor">
