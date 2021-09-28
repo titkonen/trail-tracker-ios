@@ -84,6 +84,8 @@
                     <navigationItem key="navigationItem" id="Vql-yJ-MG8"/>
                     <connections>
                         <outlet property="distanceLabel" destination="Gp7-dS-cbT" id="S8x-2t-Gc6"/>
+                        <outlet property="latitudeLabel" destination="HkM-TA-D5D" id="fH5-fb-5dE"/>
+                        <outlet property="longitudeLabel" destination="ZmE-1e-Jz7" id="eZh-yH-w9N"/>
                         <outlet property="mapContainerView" destination="jTa-fN-iYC" id="j4p-iB-mjk"/>
                         <outlet property="mapView" destination="W43-gT-kza" id="3dp-gR-eOz"/>
                         <outlet property="paceLabel" destination="BHC-x5-Y74" id="Szg-lH-WhP"/>
@@ -235,7 +237,7 @@
         <!--Spots-->
         <scene sceneID="NEn-aO-nPb">
             <objects>
-                <viewController id="8q9-nm-r6u" sceneMemberID="viewController">
+                <viewController id="8q9-nm-r6u" customClass="SpotsViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xI4-vl-zkx"/>
                         <viewControllerLayoutGuide type="bottom" id="W9C-dI-orV"/>
@@ -244,17 +246,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBS-s2-QUd">
-                                <rect key="frame" x="60" y="100" width="147" height="41"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0KE-vB-Vxx">
+                                <rect key="frame" x="0.0" y="40" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Spots" id="R1O-op-L3w">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="yuf-Vn-pzr">
+                                            <color key="tintColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="addSpotsButtonPressed:" destination="8q9-nm-r6u" id="6Y1-4T-TAg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="latitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkM-TA-D5D">
+                                <rect key="frame" x="20" y="111" width="167" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="longitudeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-1e-Jz7">
+                                <rect key="frame" x="217" y="111" width="177" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Spots" image="mappin.circle" catalog="system" id="eOC-oW-6m5"/>
+                    <connections>
+                        <outlet property="latitudeLabel" destination="HkM-TA-D5D" id="RTo-NH-WYp"/>
+                        <outlet property="longitudeLabel" destination="ZmE-1e-Jz7" id="3rA-Lq-MeU"/>
+                        <outlet property="spotsButton" destination="yuf-Vn-pzr" id="hYx-Ku-zhp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOz-0W-1bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -636,8 +671,12 @@
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="location.north.line" catalog="system" width="82" height="128"/>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="spaceship-gold" width="100" height="137"/>
         <image name="spaceship-silver" width="100" height="137"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

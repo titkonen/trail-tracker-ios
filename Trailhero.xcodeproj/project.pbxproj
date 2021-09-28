@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F1FCE65268C56E9009AEB84 /* SavedTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */; };
 		0F43665226E9E5CE008B635A /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43665126E9E5CE008B635A /* NoteCell.swift */; };
+		0FBA09192702DA5500330586 /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBA09182702DA5400330586 /* SpotsViewController.swift */; };
 		0FDDD9D4268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */; };
 		180924821EF33DE2007CF38F /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924811EF33DE2007CF38F /* MulticolorPolyline.swift */; };
 		180924851EF434F3007CF38F /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924841EF434F3007CF38F /* Badge.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTrailsViewController.swift; sourceTree = "<group>"; };
 		0F43665126E9E5CE008B635A /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		0FBA09182702DA5400330586 /* SpotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTrailsDetailsVC.swift; sourceTree = "<group>"; };
 		180924811EF33DE2007CF38F /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
 		180924841EF434F3007CF38F /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				1809248C1EF43E84007CF38F /* BadgeDetailsViewController.swift */,
 				0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */,
 				0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */,
+				0FBA09182702DA5400330586 /* SpotsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBA09192702DA5500330586 /* SpotsViewController.swift in Sources */,
 				18CF26EF1E80291E0097F88C /* NewRunViewController.swift in Sources */,
 				180924851EF434F3007CF38F /* Badge.swift in Sources */,
 				18888DD91E7F1D940038A3AF /* CoreDataStack.swift in Sources */,

@@ -5,12 +5,11 @@ import MapKit
 class NewRunViewController: UIViewController {
   
   // MARK: OUTLETS
-  @IBOutlet weak var distanceLabel: UILabel!
-  @IBOutlet weak var timeLabel: UILabel!
-  @IBOutlet weak var paceLabel: UILabel!
-  @IBOutlet weak var mapContainerView: UIView!
-  @IBOutlet weak var mapView: MKMapView!
-    
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var paceLabel: UILabel!
+    @IBOutlet weak var mapContainerView: UIView!
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var startTrackingButton: UIButton!
     @IBOutlet weak var stopTrackingButton: UIButton!
     
@@ -42,6 +41,7 @@ class NewRunViewController: UIViewController {
     timer?.invalidate()
   }
   
+    // MARK: ACTIONS
     @IBAction func startTrackingPressed(_ sender: UIButton) {
         startRun()
     }
@@ -62,7 +62,8 @@ class NewRunViewController: UIViewController {
         })
         present(alertController, animated: true)
     }
-
+    
+    // MARK: FUNCTIONS
   private func startRun() {
     mapContainerView.isHidden = false
     mapView.removeOverlays(mapView.overlays)
@@ -124,9 +125,9 @@ class NewRunViewController: UIViewController {
     run = newRun
   }
   
-}
+} ///End of main class
 
-// MARK: - Navigation
+// MARK: EXTENSIONS
 
 extension NewRunViewController: SegueHandlerType {
   enum SegueIdentifier: String {
