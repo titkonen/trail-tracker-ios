@@ -5,6 +5,8 @@ class SpotsViewController: UIViewController, CLLocationManagerDelegate {
   
   // MARK: OUTLETS
   @IBOutlet weak var getSpot: UIButton!
+    @IBOutlet weak var saveSpot: UIButton!
+    
   @IBOutlet weak var latitudeLabel: UILabel!
   @IBOutlet weak var longitudeLabel: UILabel!
   @IBOutlet weak var messageLabel: UILabel!
@@ -47,7 +49,13 @@ class SpotsViewController: UIViewController, CLLocationManagerDelegate {
     }
     updateLabels()
   }
-  
+    
+    
+    @IBAction func saveSpotPressed(_ sender: UIButton) {
+        
+        
+    }
+    
   
   // MARK: FUNCTIONS
   func updateLabels() {

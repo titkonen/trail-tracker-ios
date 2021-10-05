@@ -291,6 +291,16 @@
                                     <action selector="getSpotPressed:" destination="8q9-nm-r6u" eventType="touchUpInside" id="zrw-fg-eav"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILC-mC-SD6">
+                                <rect key="frame" x="287" y="775" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save spot">
+                                    <color key="titleColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveSpotPressed:" destination="8q9-nm-r6u" eventType="touchUpInside" id="3eA-jo-hjs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -300,6 +310,7 @@
                         <outlet property="latitudeLabel" destination="HkM-TA-D5D" id="RTo-NH-WYp"/>
                         <outlet property="longitudeLabel" destination="ZmE-1e-Jz7" id="3rA-Lq-MeU"/>
                         <outlet property="messageLabel" destination="is4-yV-d4e" id="1mO-e3-ZiF"/>
+                        <outlet property="saveSpot" destination="ILC-mC-SD6" id="43b-GL-OpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOz-0W-1bQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

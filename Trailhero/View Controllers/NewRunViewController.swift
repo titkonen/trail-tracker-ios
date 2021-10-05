@@ -144,7 +144,6 @@ extension NewRunViewController: SegueHandlerType {
 }
 
 // MARK: - Location Manager Delegate
-
 extension NewRunViewController: CLLocationManagerDelegate {
   
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -167,7 +166,6 @@ extension NewRunViewController: CLLocationManagerDelegate {
 }
 
 // MARK: - Map View Delegate
-
 extension NewRunViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
     guard let polyline = overlay as? MKPolyline else {
