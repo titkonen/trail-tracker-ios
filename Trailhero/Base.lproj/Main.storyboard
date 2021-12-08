@@ -359,13 +359,7 @@
                             <outlet property="delegate" destination="cka-AN-IXM" id="Gx2-cT-zJS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Saved trails" largeTitleDisplayMode="always" id="fCz-qd-4gU">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iCS-TB-Beb">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="cka-AN-IXM" id="qfP-IX-F27"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Saved trails" largeTitleDisplayMode="always" id="fCz-qd-4gU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4n-Ut-zJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -551,7 +545,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GzV-oS-ca0">
                                 <rect key="frame" x="20" y="111" width="374" height="702"/>
-                                <mutableString key="text">Kirijaki Oy operates Trailhero Trails application (Downloadable in Apple Appstore). This text is used to inform application users regarding our policies with the collection, use and disclosure of Personal Information if anyone decided to use our applications.
+                                <string key="text">Kirijaki Oy operates Trailhero Trails application (Downloadable in Apple Appstore). This text is used to inform application users regarding our policies with the collection, use and disclosure of Personal Information if anyone decided to use our applications.
 
 Information Collection and Use
 Trailhero Spots application and Kirijaki company does not collect any user information and data.
@@ -567,7 +561,7 @@ We may update our Privacy Policy from time to time. Thus, we advise you to revie
 
 Contact Us
 If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
-Send emails to our address: kirijaki@icloud.com and we will answer for you as soon as possible.</mutableString>
+Send emails to our address: kirijaki@icloud.com and we will answer for you as soon as possible.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

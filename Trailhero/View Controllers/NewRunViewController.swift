@@ -33,7 +33,6 @@ class NewRunViewController: UIViewController {
     startTrackingButton.tintColor = .white
     startTrackingButton.frame.size = CGSize(width: 150, height: 48)
     startTrackingButton.center.x = self.view.center.x
-    
   }
     
   override func viewWillDisappear(_ animated: Bool) {

@@ -116,7 +116,3 @@ class SavedTrailsViewController: UITableViewController {
   
 
 } // End of main class
-
-
-
-
