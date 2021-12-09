@@ -3,6 +3,7 @@ import MapKit
 
 class RunDetailsViewController: UIViewController {
   
+  // MARK: Outlets
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
@@ -192,8 +193,7 @@ class RunDetailsViewController: UIViewController {
   }
 }
 
-// MARK: - Map View Delegate
-
+// MARK: Map View Delegate
 extension RunDetailsViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
     guard let polyline = overlay as? MulticolorPolyline else {

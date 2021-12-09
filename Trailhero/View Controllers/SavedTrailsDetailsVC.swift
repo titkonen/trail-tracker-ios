@@ -1,10 +1,12 @@
-import Foundation
 import UIKit
 import MapKit
 
 class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
   
-  // MARK: PROPERTIES
+  // MARK: Outlets
+  @IBOutlet weak var mapView: MKMapView!
+  
+  // MARK: Properties
   //var run = [Run]()
   var run: Run!
 
@@ -55,7 +57,8 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
       label.textAlignment = .right
       return label
   }()
-  
+
+  /*
   fileprivate lazy var mapView: MKMapView = {
       let kartta = MKMapView()
       
@@ -70,34 +73,26 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
       kartta.isScrollEnabled = true
     
       return kartta
-  }()
+  }()*/
   
   // MARK: VIEW LIFE CYCLE
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
     print("viewDidLoad is loaded")
-    
     setupUI()
-    
     loadMap()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    
     view.backgroundColor = UIColor(red: 0/255, green: 59/255, blue: 59/255, alpha: 1)
     //print("viewWillAppear is loaded 2")
-    
     distanceLabel.text = String(format: "%.1f", noteData.distance) + " m"
     durationLabel.text = String(noteData.duration) + " sec"
     //dateLabel?.text = "HELLO HELLO"
-    
   }
   
-  // MARK: MAP FUNCTIONS
-  
+  // MARK: Map functions
   private func mapRegion() -> MKCoordinateRegion? {
     guard
       let locations = run.locations,
@@ -121,10 +116,8 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
     let maxLong = longitudes.max()!
     let minLong = longitudes.min()!
     
-    let center = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2,
-                                        longitude: (minLong + maxLong) / 2)
-    let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat) * 1.3,
-                                longitudeDelta: (maxLong - minLong) * 1.3)
+    let center = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2, longitude: (minLong + maxLong) / 2)
+    let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat) * 1.3, longitudeDelta: (maxLong - minLong) * 1.3)
     return MKCoordinateRegion(center: center, span: span)
   }
   
@@ -155,10 +148,7 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
     for ((start, end), speed) in zip(coordinates, speeds) {
       let coords = [start.coordinate, end.coordinate]
       let segment = MulticolorPolyline(coordinates: coords, count: 2)
-      segment.color = segmentColor(speed: speed,
-                                   midSpeed: midSpeed,
-                                   slowestSpeed: minSpeed,
-                                   fastestSpeed: maxSpeed)
+      segment.color = segmentColor(speed: speed, midSpeed: midSpeed, slowestSpeed: minSpeed, fastestSpeed: maxSpeed)
       segments.append(segment)
     }
     return segments
@@ -170,9 +160,7 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
       locations.count > 0,
       let region = mapRegion()
     else {
-        let alert = UIAlertController(title: "Error",
-                                      message: "Sorry, this run has no locations saved",
-                                      preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Sorry, this run has no locations saved", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         present(alert, animated: true)
         return
@@ -181,6 +169,7 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
     mapView.setRegion(region, animated: true)
     mapView.addOverlays(polyLine())
     //mapView.addAnnotations(annotations())
+    print("loadMap loaded")
   }
   
   private func segmentColor(speed: Double, midSpeed: Double, slowestSpeed: Double, fastestSpeed: Double) -> UIColor {
@@ -222,7 +211,7 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
       view.addSubview(dateLabel)
       view.addSubview(distanceLabel)
       view.addSubview(durationLabel)
-      view.addSubview(mapView)
+      //view.addSubview(mapView)
       
       dateLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
       dateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -239,5 +228,38 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
       durationLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -640).isActive = true
     
   }
+  
+}
+
+// MARK: Map View Delegate
+extension SavedTrailsDetailsVC: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    guard let polyline = overlay as? MulticolorPolyline else {
+      return MKOverlayRenderer(overlay: overlay)
+    }
+    let renderer = MKPolylineRenderer(polyline: polyline)
+    renderer.strokeColor = polyline.color
+    renderer.lineWidth = 3
+    return renderer
+  }
+  
+ /* func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    guard let annotation = annotation as? BadgeAnnotation else { return nil }
+    let reuseID = "checkpoint"
+    var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseID)
+    if annotationView == nil {
+      annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+      annotationView?.image = #imageLiteral(resourceName: "mapPin")
+      annotationView?.canShowCallout = true
+    }
+    annotationView?.annotation = annotation
+    
+    let badgeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+    badgeImageView.image = UIImage(named: annotation.imageName)
+    badgeImageView.contentMode = .scaleAspectFit
+    annotationView?.leftCalloutAccessoryView = badgeImageView
+    
+    return annotationView
+  } */
   
 }
