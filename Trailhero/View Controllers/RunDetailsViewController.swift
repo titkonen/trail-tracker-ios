@@ -13,6 +13,21 @@ class RunDetailsViewController: UIViewController {
   
   var run: Run!
   
+  let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, YYYY hh:mm"
+        //dateFormatter.dateFormat = "MM/dd/yy"
+        return dateFormatter
+  }()
+  
+  var noteData: Run! {
+      didSet {
+        distanceLabel.text = String(noteData.distance)
+        timeLabel.text = String(noteData.duration)
+        dateLabel.text = dateFormatter.string(from: noteData.timestamp ?? Date())
+      }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()

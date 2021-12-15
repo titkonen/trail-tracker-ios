@@ -70,7 +70,7 @@ class SavedTrailsViewController: UITableViewController {
   
     ///Push content to DetailController
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let noteDetailController = SavedTrailsDetailsVC()
+      let noteDetailController = RunDetailsViewController() ///SavedTrailsDetailsVC()
       let noteForRow = self.run[indexPath.row]
       noteDetailController.noteData = noteForRow
       
