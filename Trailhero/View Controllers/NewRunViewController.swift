@@ -1,6 +1,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import CoreData
 
 class NewRunViewController: UIViewController {
   
@@ -20,6 +21,8 @@ class NewRunViewController: UIViewController {
   private var timer: Timer?
   private var distance = Measurement(value: 0, unit: UnitLength.meters)
   private var locationList: [CLLocation] = []
+  
+  var managedObjectContext: NSManagedObjectContext!
 
   // MARK: VIEW LIFE CYCLE
   override func viewDidLoad() {

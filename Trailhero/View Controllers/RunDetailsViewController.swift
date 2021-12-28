@@ -1,5 +1,7 @@
 import UIKit
 import MapKit
+import CoreLocation
+import CoreData
 
 class RunDetailsViewController: UIViewController {
   
@@ -11,7 +13,23 @@ class RunDetailsViewController: UIViewController {
   @IBOutlet weak var badgeImageView: UIImageView!
   @IBOutlet weak var badgeInfoButton: UIButton!
   
+  var managedObjectContext: NSManagedObjectContext! /// Passing CoreData context
+  
   var run: Run!
+  var descriptionText = ""
+  var locationToEdit: Run? {
+    didSet {
+      if let run = locationToEdit {
+        descriptionText = String(format: "%.1f",run.distance) + " m"
+        //categoryName = location.category
+        //date = run.date
+        /*coordinate = CLLocationCoordinate2DMake(
+          location.latitude,
+          location.longitude)
+        placemark = location.placemark */
+      }
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -15,7 +15,9 @@ class SavedTrailsViewController: UITableViewController {
     return formatter
   }()
   
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
+  var managedObjectContext: NSManagedObjectContext!
+  
+//    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
     
   // MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
@@ -29,7 +31,7 @@ class SavedTrailsViewController: UITableViewController {
 //      view.backgroundColor = .blue
 //      print("viewWillAppear is red")
       
-      loadTrails()
+     // loadTrails()
       setupTableView()
       
     }
@@ -100,7 +102,7 @@ class SavedTrailsViewController: UITableViewController {
 //         tableView.reloadData()
 //    }
     
-    func loadTrails() {
+    /* func loadTrails() {
         
         let request : NSFetchRequest<Run> = Run.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: false)
@@ -112,7 +114,7 @@ class SavedTrailsViewController: UITableViewController {
             print("Error Fetching data from context \(error)")
         }
         tableView.reloadData()
-    }
+    } */
   
 
 } // End of main class
