@@ -119,7 +119,7 @@ class NewRunViewController: UIViewController {
       newRun.addToLocations(locationObject)
     }
     
-    CoreDataStack.saveContext()
+    CoreDataStack.saveContext2()
     
     run = newRun
   }

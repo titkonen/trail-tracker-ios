@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0E3913277D8771004EE74F /* FetchedRunsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E3912277D8771004EE74F /* FetchedRunsCell.swift */; };
 		0F1FCE65268C56E9009AEB84 /* SavedTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */; };
 		0F43665226E9E5CE008B635A /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43665126E9E5CE008B635A /* NoteCell.swift */; };
 		0FDDD9D4268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */; };
+		0FE2AFA6277DDC9B00DADD45 /* Run+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA2277DDC9B00DADD45 /* Run+CoreDataClass.swift */; };
+		0FE2AFA7277DDC9B00DADD45 /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA3277DDC9B00DADD45 /* Run+CoreDataProperties.swift */; };
+		0FE2AFA8277DDC9B00DADD45 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA4277DDC9B00DADD45 /* Location+CoreDataClass.swift */; };
+		0FE2AFA9277DDC9B00DADD45 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA5277DDC9B00DADD45 /* Location+CoreDataProperties.swift */; };
 		180924821EF33DE2007CF38F /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924811EF33DE2007CF38F /* MulticolorPolyline.swift */; };
 		180924851EF434F3007CF38F /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924841EF434F3007CF38F /* Badge.swift */; };
 		180924871EF4369B007CF38F /* BadgeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924861EF4369B007CF38F /* BadgeStatus.swift */; };
 		180924891EF438BD007CF38F /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924881EF438BD007CF38F /* BadgeCell.swift */; };
-		1809248B1EF43B39007CF38F /* BadgesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809248A1EF43B39007CF38F /* BadgesTableViewController.swift */; };
+		1809248B1EF43B39007CF38F /* FetchedRunsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809248A1EF43B39007CF38F /* FetchedRunsVC.swift */; };
 		1809248D1EF43E84007CF38F /* BadgeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809248C1EF43E84007CF38F /* BadgeDetailsViewController.swift */; };
 		1809248F1EF47583007CF38F /* BadgeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809248E1EF47583007CF38F /* BadgeAnnotation.swift */; };
 		18350CE81E882A860054E1C6 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18350CE71E882A860054E1C6 /* StoryboardSupport.swift */; };
@@ -33,14 +38,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0E3912277D8771004EE74F /* FetchedRunsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedRunsCell.swift; sourceTree = "<group>"; };
 		0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTrailsViewController.swift; sourceTree = "<group>"; };
 		0F43665126E9E5CE008B635A /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedTrailsDetailsVC.swift; sourceTree = "<group>"; };
+		0FE2AFA2277DDC9B00DADD45 /* Run+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Run+CoreDataClass.swift"; path = "Trailhero/Run+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FE2AFA3277DDC9B00DADD45 /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Run+CoreDataProperties.swift"; path = "Trailhero/Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FE2AFA4277DDC9B00DADD45 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "Trailhero/Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0FE2AFA5277DDC9B00DADD45 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "Trailhero/Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		180924811EF33DE2007CF38F /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
 		180924841EF434F3007CF38F /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		180924861EF4369B007CF38F /* BadgeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStatus.swift; sourceTree = "<group>"; };
 		180924881EF438BD007CF38F /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeCell.swift; sourceTree = "<group>"; };
-		1809248A1EF43B39007CF38F /* BadgesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesTableViewController.swift; sourceTree = "<group>"; };
+		1809248A1EF43B39007CF38F /* FetchedRunsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedRunsVC.swift; sourceTree = "<group>"; };
 		1809248C1EF43E84007CF38F /* BadgeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeDetailsViewController.swift; sourceTree = "<group>"; };
 		1809248E1EF47583007CF38F /* BadgeAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAnnotation.swift; sourceTree = "<group>"; };
 		18350CE71E882A860054E1C6 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				0F43665126E9E5CE008B635A /* NoteCell.swift */,
+				0F0E3912277D8771004EE74F /* FetchedRunsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -93,6 +104,10 @@
 		18888DB61E7F0FA80038A3AF = {
 			isa = PBXGroup;
 			children = (
+				0FE2AFA2277DDC9B00DADD45 /* Run+CoreDataClass.swift */,
+				0FE2AFA3277DDC9B00DADD45 /* Run+CoreDataProperties.swift */,
+				0FE2AFA4277DDC9B00DADD45 /* Location+CoreDataClass.swift */,
+				0FE2AFA5277DDC9B00DADD45 /* Location+CoreDataProperties.swift */,
 				18888DC11E7F0FA80038A3AF /* Trailhero */,
 				18888DC01E7F0FA80038A3AF /* Products */,
 			);
@@ -160,7 +175,7 @@
 			children = (
 				18CF26EE1E80291E0097F88C /* NewRunViewController.swift */,
 				18CF26F01E80292C0097F88C /* RunDetailsViewController.swift */,
-				1809248A1EF43B39007CF38F /* BadgesTableViewController.swift */,
+				1809248A1EF43B39007CF38F /* FetchedRunsVC.swift */,
 				1809248C1EF43E84007CF38F /* BadgeDetailsViewController.swift */,
 				0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */,
 				0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */,
@@ -250,24 +265,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CF26EF1E80291E0097F88C /* NewRunViewController.swift in Sources */,
+				0FE2AFA7277DDC9B00DADD45 /* Run+CoreDataProperties.swift in Sources */,
 				180924851EF434F3007CF38F /* Badge.swift in Sources */,
 				18888DD91E7F1D940038A3AF /* CoreDataStack.swift in Sources */,
 				187AF9A91EF3170700C2B8E7 /* LocationManager.swift in Sources */,
 				18888DCB1E7F0FA80038A3AF /* MoonRunner.xcdatamodeld in Sources */,
 				18CF26F11E80292C0097F88C /* RunDetailsViewController.swift in Sources */,
 				1809248D1EF43E84007CF38F /* BadgeDetailsViewController.swift in Sources */,
+				0FE2AFA9277DDC9B00DADD45 /* Location+CoreDataProperties.swift in Sources */,
 				0F43665226E9E5CE008B635A /* NoteCell.swift in Sources */,
 				180924821EF33DE2007CF38F /* MulticolorPolyline.swift in Sources */,
+				0FE2AFA8277DDC9B00DADD45 /* Location+CoreDataClass.swift in Sources */,
 				18888DC31E7F0FA80038A3AF /* AppDelegate.swift in Sources */,
 				187AF9A71EF2FC1200C2B8E7 /* FormatDisplay.swift in Sources */,
+				0FE2AFA6277DDC9B00DADD45 /* Run+CoreDataClass.swift in Sources */,
 				180924871EF4369B007CF38F /* BadgeStatus.swift in Sources */,
 				18350CE81E882A860054E1C6 /* StoryboardSupport.swift in Sources */,
-				1809248B1EF43B39007CF38F /* BadgesTableViewController.swift in Sources */,
+				1809248B1EF43B39007CF38F /* FetchedRunsVC.swift in Sources */,
 				187AF99D1EF2F78500C2B8E7 /* UnitExtensions.swift in Sources */,
 				1809248F1EF47583007CF38F /* BadgeAnnotation.swift in Sources */,
 				0F1FCE65268C56E9009AEB84 /* SavedTrailsViewController.swift in Sources */,
 				0FDDD9D4268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift in Sources */,
 				180924891EF438BD007CF38F /* BadgeCell.swift in Sources */,
+				0F0E3913277D8771004EE74F /* FetchedRunsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

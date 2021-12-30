@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func applicationDidEnterBackground(_ application: UIApplication) {
-    CoreDataStack.saveContext()
+    //CoreDataStack.saveContext()
   }
   
   func applicationWillTerminate(_ application: UIApplication) {
-    CoreDataStack.saveContext()
+    //CoreDataStack.saveContext()
   }
   
 //  // MARK: - Core Data stack
