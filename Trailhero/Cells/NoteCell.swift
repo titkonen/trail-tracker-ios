@@ -14,7 +14,7 @@ class NoteCell: UITableViewCell {
         }
     }
     
-    /// Note title
+    /// Note title = Distance
     fileprivate var noteTitle: UILabel = {
         let label = UILabel()
         label.text = "Places to take photos"
@@ -32,7 +32,7 @@ class NoteCell: UITableViewCell {
         return label
     }()
         
-    /// Preview label
+    /// Preview label = Duration
     fileprivate var previewLabel: UILabel = {
         let label = UILabel()
         label.text = "The note text will go here for note preview..."
