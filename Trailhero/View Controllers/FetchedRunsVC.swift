@@ -8,6 +8,7 @@ class FetchedRunsVC: UITableViewController {
   fileprivate let CustomCell:String = "CustomCell"
 
   // MARK: FetchResultController properties
+  var managedObjectContext: NSManagedObjectContext!
   lazy var  coreDataStack = CoreDataStack(modelName: "MoonRunner")
   
   lazy var fetchedResultsController: NSFetchedResultsController<Run> = {
@@ -86,6 +87,13 @@ extension FetchedRunsVC {
     cell.runData = noteForRow
     return cell
   }
+  
+  //Delete row
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+    // empty now
+  }
+
   
 }
 

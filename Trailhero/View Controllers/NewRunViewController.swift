@@ -46,18 +46,20 @@ class NewRunViewController: UIViewController {
     }
     
     @IBAction func stopTrackingPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Tracking end?",
+        let alertController = UIAlertController(title: "Choose action",
                                                 message: "",
                                                 preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+        alertController.addAction(UIAlertAction(title: "Continue", style: .cancel))
+//        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
+//          self.stopRun()
+//          self.saveRun()
+//          self.performSegue(withIdentifier: .details, sender: nil)
+//        })
+        alertController.addAction(UIAlertAction(title: "End tracking", style: .destructive) { _ in
           self.stopRun()
           self.saveRun()
           self.performSegue(withIdentifier: .details, sender: nil)
-        })
-        alertController.addAction(UIAlertAction(title: "End tracking", style: .destructive) { _ in
-          self.stopRun()
-          _ = self.navigationController?.popToRootViewController(animated: true)
+          //_ = self.navigationController?.popToRootViewController(animated: true)
         })
         present(alertController, animated: true)
     }
@@ -158,7 +160,6 @@ extension NewRunViewController: CLLocationManagerDelegate {
         let region = MKCoordinateRegion.init(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
       }
-      
       locationList.append(newLocation)
     }
   }
