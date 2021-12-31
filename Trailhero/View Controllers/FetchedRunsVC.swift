@@ -6,13 +6,11 @@ class FetchedRunsVC: UITableViewController {
   // MARK: Properties
   var run = [Run]()
   fileprivate let CustomCell:String = "CustomCell"
-  //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // Context Layer
 
-  // MARK: FetchResultController
+  // MARK: FetchResultController properties
   lazy var  coreDataStack = CoreDataStack(modelName: "MoonRunner")
   
-  lazy var fetchedResultsController:
-    NSFetchedResultsController<Run> = {
+  lazy var fetchedResultsController: NSFetchedResultsController<Run> = {
     let fetchRequest: NSFetchRequest<Run> = Run.fetchRequest()
     let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: false)
     fetchRequest.sortDescriptors = [sortDescriptor]
@@ -20,9 +18,11 @@ class FetchedRunsVC: UITableViewController {
     let fetchedResultsController = NSFetchedResultsController(
       fetchRequest: fetchRequest,
       managedObjectContext: coreDataStack.managedContext,
-      sectionNameKeyPath: nil,
-      cacheName: nil)
-
+      //managedObjectContext: self.managedObjectContext, ///test
+      sectionNameKeyPath: #keyPath(Run.timestamp),
+      cacheName: "trailhero")
+      
+      fetchedResultsController.delegate = self /// Sends to to extension delegate
     return fetchedResultsController
   }()
 
@@ -30,73 +30,73 @@ class FetchedRunsVC: UITableViewController {
   // MARK: View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    //fetchRuns()
     setupTableView()
-    
-    //NS Fetching
+   
     do {
+      print("First time view loaded.")
       try fetchedResultsController.performFetch()
     } catch let error as NSError {
       print("Fetching error: \(error), \(error.userInfo)")
     }
-
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    performFetch()
   }
   
   // MARK: Functions
-/*
-  func fetchRuns() {
-      let request : NSFetchRequest<Run> = Run.fetchRequest()
-      let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: false)
-      request.sortDescriptors = [sortDescriptor]
-    
-      do {
-        run = try CoreDataStack.context.fetch(request)
-        print("Load trails fetched 2")
-      } catch {
-          print("Error Fetching data from context \(error)")
-      }
+  func performFetch() {
+    do {
       tableView.reloadData()
-  } */
+      print("View updated.")
+      try fetchedResultsController.performFetch()
+    } catch let error as NSError {
+      print("Fetching error: \(error), \(error.userInfo)")
+    }
+  }
   
   fileprivate func setupTableView() {
       tableView.register(FetchedRunsCell.self, forCellReuseIdentifier: CustomCell)
   }
   
-  
 } // end
 
-// MARK: Table View Data Source
+// MARK: extension Table View Data Source
 extension FetchedRunsVC {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return fetchedResultsController.sections?.count ?? 0
   }
-
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     guard let sectionInfo = fetchedResultsController.sections?[section] else {
         return 0
     }
     return sectionInfo.numberOfObjects
   }
-
-  /*
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return run.count
-  }*/
+  
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return 64
+  }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
     let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! FetchedRunsCell
-    
     let noteForRow = fetchedResultsController.object(at: indexPath) /// fetchresult style
-    
-    //let noteForRow = self.run[indexPath.row] ///Earlier workable style
     cell.runData = noteForRow
-    
     return cell
   }
   
 }
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension FetchedRunsVC: NSFetchedResultsControllerDelegate {
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    print("NSFetchedResultsControllerDelegate controllerDidChangeContent")
+      tableView.reloadData()
+  }
+}
+
 
 //// MARK: - Navigation
 //
