@@ -248,14 +248,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PfL-Fv-Wbd">
-                                            <rect key="frame" x="20" y="7.5" width="30" height="17"/>
+                                            <rect key="frame" x="20" y="6" width="35" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QqV-hk-HmP">
-                                            <rect key="frame" x="20" y="27" width="44" height="14.5"/>
+                                            <rect key="frame" x="20" y="26.5" width="53" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,7 +336,7 @@
             </objects>
             <point key="canvasLocation" x="-442.02898550724643" y="-923.4375"/>
         </scene>
-        <!--Fetched RunsVC-->
+        <!--Fetched Runs-->
         <scene sceneID="XxP-LB-PDV">
             <objects>
                 <tableViewController id="5Ir-HY-mg6" customClass="FetchedRunsVC" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
@@ -359,7 +359,7 @@
                             <outlet property="delegate" destination="5Ir-HY-mg6" id="LAg-UG-jw1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wMJ-nv-zyH"/>
+                    <navigationItem key="navigationItem" title="Fetched Runs" largeTitleDisplayMode="always" id="wMJ-nv-zyH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8Y-NR-aZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -533,9 +533,11 @@ Send emails to our address: kirijaki@icloud.com and we will answer for you as so
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4gT-sM-eoy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Fetched runs" image="car" catalog="system" id="SlS-TV-BKh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bIF-ia-xpX">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="bIF-ia-xpX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
