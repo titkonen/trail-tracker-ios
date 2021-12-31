@@ -26,7 +26,7 @@ class NewRunViewController: UIViewController {
     super.viewDidLoad()
 
     mapContainerView.isHidden = false
-    print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+    //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     
     startTrackingButton.backgroundColor = UIColor(red: 4/255, green: 191/255, blue: 191/255, alpha: 1)
     startTrackingButton.layer.cornerRadius = 12.0
@@ -93,7 +93,7 @@ class NewRunViewController: UIViewController {
     let formattedPace = FormatDisplay.pace(distance: distance,
                                            seconds: seconds,
                                            outputUnit: UnitSpeed.minutesPerKilometer)
-    distanceLabel.text = "Distance:  \(formattedDistance) km"
+    distanceLabel.text = "Distance:  \(formattedDistance)"
     timeLabel.text = "Time:  \(formattedTime)"
     paceLabel.text = "Pace:  \(formattedPace)"
   }
