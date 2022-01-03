@@ -11,7 +11,6 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
   let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM dd, YYYY hh:mm"
-        //dateFormatter.dateFormat = "MM/dd/yy"
         return dateFormatter
   }()
     

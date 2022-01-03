@@ -24,10 +24,8 @@ class NewRunViewController: UIViewController {
   // MARK: VIEW LIFE CYCLE
   override func viewDidLoad() {
     super.viewDidLoad()
-
     mapContainerView.isHidden = false
     //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-    
     startTrackingButton.backgroundColor = UIColor(red: 4/255, green: 191/255, blue: 191/255, alpha: 1)
     startTrackingButton.layer.cornerRadius = 12.0
     startTrackingButton.tintColor = .white
@@ -46,9 +44,7 @@ class NewRunViewController: UIViewController {
     }
     
     @IBAction func stopTrackingPressed(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Choose action",
-                                                message: "",
-                                                preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Choose action", message: "", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Continue", style: .cancel))
 //        alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
 //          self.stopRun()
@@ -92,9 +88,7 @@ class NewRunViewController: UIViewController {
   private func updateDisplay() {
     let formattedDistance = FormatDisplay.distance(distance)
     let formattedTime = FormatDisplay.time(seconds)
-    let formattedPace = FormatDisplay.pace(distance: distance,
-                                           seconds: seconds,
-                                           outputUnit: UnitSpeed.minutesPerKilometer)
+    let formattedPace = FormatDisplay.pace(distance: distance, seconds: seconds, outputUnit: UnitSpeed.minutesPerKilometer)
     distanceLabel.text = "Distance:  \(formattedDistance)"
     timeLabel.text = "Time:  \(formattedTime)"
     paceLabel.text = "Pace:  \(formattedPace)"
@@ -120,16 +114,13 @@ class NewRunViewController: UIViewController {
       locationObject.longitude = location.coordinate.longitude
       newRun.addToLocations(locationObject)
     }
-    
-    CoreDataStack.saveContext2()
-    
+    CoreDataStack.saveContext2() // "2"
     run = newRun
   }
   
 } ///End of main class
 
 // MARK: EXTENSIONS
-
 extension NewRunViewController: SegueHandlerType {
   enum SegueIdentifier: String {
     case details = "RunDetailsViewController"

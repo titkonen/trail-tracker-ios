@@ -93,6 +93,15 @@ extension FetchedRunsVC {
 
     // empty now
   }
+  
+  ///Push content to DetailController
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let noteDetailController = RunDetailsViewController()
+    let noteForRow = self.run[indexPath.row]
+    noteDetailController.runData = noteForRow
+    
+    navigationController?.pushViewController(noteDetailController, animated: true)
+  }
 
   
 }

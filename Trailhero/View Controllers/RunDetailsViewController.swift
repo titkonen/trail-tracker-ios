@@ -3,6 +3,7 @@ import MapKit
 
 class RunDetailsViewController: UIViewController {
   
+  // MARK: Outlets
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
@@ -11,11 +12,27 @@ class RunDetailsViewController: UIViewController {
   @IBOutlet weak var badgeImageView: UIImageView!
   @IBOutlet weak var badgeInfoButton: UIButton!
   
+  // MARK: Properties
+  let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, YYYY hh:mm"
+        return dateFormatter
+  }()
+  
   var run: Run!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     configureView()
+  }
+  
+  var runData: Run! {
+      didSet {
+        distanceLabel.text = String(runData.distance)
+        //durationLabel.text = String(runData.duration)
+        timeLabel.text = String(runData.duration)
+        dateLabel.text = dateFormatter.string(from: runData.timestamp ?? Date())
+      }
   }
   
   @IBAction func infoButtonTapped() {
