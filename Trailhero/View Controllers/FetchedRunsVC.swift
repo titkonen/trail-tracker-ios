@@ -118,10 +118,71 @@ extension FetchedRunsVC {
 
 // MARK: - NSFetchedResultsControllerDelegate
 extension FetchedRunsVC: NSFetchedResultsControllerDelegate {
-  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    print("NSFetchedResultsControllerDelegate controllerDidChangeContent")
-      tableView.reloadData()
+  
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    print("*** controllerWillChangeContent")
+    tableView.beginUpdates()
   }
+  
+  /// This is v1 solution which works
+//  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//    print("NSFetchedResultsControllerDelegate controllerDidChangeContent")
+//      tableView.reloadData()
+//  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?,for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    switch type {
+    case .insert:
+      print("*** NSFetchedResultsChangeInsert (object)")
+      tableView.insertRows(at: [newIndexPath!], with: .fade)
+
+    case .delete:
+      print("*** NSFetchedResultsChangeDelete (object)")
+      tableView.deleteRows(at: [indexPath!], with: .fade)
+
+    case .update:
+      print("*** NSFetchedResultsChangeUpdate (object)")
+      if let cell = tableView.cellForRow(
+        at: indexPath!) as? FetchedRunsCell {
+        let noteForRow = controller.object(
+          at: indexPath!) as! Run
+        cell.runData = noteForRow
+      }
+
+    case .move:
+      print("*** NSFetchedResultsChangeMove (object)")
+      tableView.deleteRows(at: [indexPath!], with: .fade)
+      tableView.insertRows(at: [newIndexPath!], with: .fade)
+      
+    @unknown default:
+      print("*** NSFetchedResults unknown type")
+    }
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    switch type {
+    case .insert:
+      print("*** NSFetchedResultsChangeInsert (section)")
+      tableView.insertSections(
+        IndexSet(integer: sectionIndex), with: .fade)
+    case .delete:
+      print("*** NSFetchedResultsChangeDelete (section)")
+      tableView.deleteSections(
+        IndexSet(integer: sectionIndex), with: .fade)
+    case .update:
+      print("*** NSFetchedResultsChangeUpdate (section)")
+    case .move:
+      print("*** NSFetchedResultsChangeMove (section)")
+    @unknown default:
+      print("*** NSFetchedResults unknown type")
+    }
+  }
+
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    print("*** controllerDidChangeContent")
+    tableView.endUpdates()
+  }
+  
 }
 
 
