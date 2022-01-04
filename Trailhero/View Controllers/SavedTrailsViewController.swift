@@ -18,7 +18,6 @@ class SavedTrailsViewController: UITableViewController {
   // MARK: VIEW LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
         loadTrails()
         setupTableView()
     }
@@ -34,26 +33,22 @@ class SavedTrailsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
-      let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! NoteCell ///Casting =>  as! NoteCell  to custom cell  //SavedTrailsCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! NoteCell
       let noteForRow = self.run[indexPath.row]
       cell.noteData = noteForRow
-      
       return cell
     }
   
-    ///Push content to DetailController
+    ///Push content to Detail View
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       let noteDetailController = SavedTrailsDetailsVC()
       let noteForRow = self.run[indexPath.row]
       noteDetailController.noteData = noteForRow
-      
       navigationController?.pushViewController(noteDetailController, animated: true)
     }
  
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       run.remove(at: indexPath.row)
-      
       let indexPaths = [indexPath]
       tableView.deleteRows(at: indexPaths, with: .automatic)
     }
@@ -64,7 +59,6 @@ class SavedTrailsViewController: UITableViewController {
     
     // MARK: CRUD Functions
     func loadTrails() {
-        
         let request : NSFetchRequest<Run> = Run.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: #keyPath(Run.timestamp), ascending: false)
         request.sortDescriptors = [sortDescriptor]
@@ -78,5 +72,4 @@ class SavedTrailsViewController: UITableViewController {
         tableView.reloadData()
     }
   
-
 } // End of main class

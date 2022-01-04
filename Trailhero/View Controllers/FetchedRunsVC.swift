@@ -67,14 +67,23 @@ class FetchedRunsVC: UITableViewController {
 extension FetchedRunsVC {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return fetchedResultsController.sections?.count ?? 0
+    if let sections = fetchedResultsController.sections {
+      return sections.count
+    }
+    return 0
+    //OLD return fetchedResultsController.sections?.count ?? 0
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    guard let sectionInfo = fetchedResultsController.sections?[section] else {
-        return 0
+    if let sections = fetchedResultsController.sections {
+      return sections[section].numberOfObjects
     }
-    return sectionInfo.numberOfObjects
+    return 0
+//    OLD
+//    guard let sectionInfo = fetchedResultsController.sections?[section] else {
+//        return 0
+//    }
+//    return sectionInfo.numberOfObjects
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,14 +103,15 @@ extension FetchedRunsVC {
     // empty now
   }
   
-  ///Push content to DetailController
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let noteDetailController = RunDetailsViewController()
-    let noteForRow = self.run[indexPath.row]
-    noteDetailController.runData = noteForRow
-    
-    navigationController?.pushViewController(noteDetailController, animated: true)
-  }
+  ///Push content to Detail View
+//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//    print("tapped")
+//    let noteDetailController = RunDetailsViewController()
+//    let noteForRow = self.run[indexPath.row]
+//    noteDetailController.runData = noteForRow
+//
+//    navigationController?.pushViewController(noteDetailController, animated: true)
+//  }
 
   
 }
@@ -116,21 +126,22 @@ extension FetchedRunsVC: NSFetchedResultsControllerDelegate {
 
 
 //// MARK: - Navigation
-//
-//extension BadgesTableViewController: SegueHandlerType {
+
+//extension FetchedRunsVC: SegueHandlerType {
 //  enum SegueIdentifier: String {
-//    case details = "BadgeDetailsViewController"
+//    case details = "RunDetailsViewController"
 //  }
-//  
+//
 //  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //    switch segueIdentifier(for: segue) {
 //    case .details:
-//      let destination = segue.destination as! BadgeDetailsViewController
+//      let destination = segue.destination as! RunDetailsViewController
 //      let indexPath = tableView.indexPathForSelectedRow!
-//      destination.status = statusList[indexPath.row]
+//      //destination.status = statusList[indexPath.row]
+//      destination.run = run[indexPath.row]
 //    }
 //  }
-//  
+//
 //  override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
 //    guard let segue = SegueIdentifier(rawValue: identifier) else { return false }
 //    switch segue {
