@@ -21,7 +21,7 @@ class FetchedRunDetailVC: UIViewController {
   fileprivate lazy var dateLabel: UILabel = {
       let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
-      label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+      label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
       label.textColor = UIColor(red: 242/255, green: 224/255, blue: 201/255, alpha: 1)
       label.text = dateFormatter.string(from: runData.timestamp ?? Date())
       //label.text = "HELLO HELLO 3"
@@ -32,10 +32,9 @@ class FetchedRunDetailVC: UIViewController {
   fileprivate lazy var distanceLabel: UILabel = {
       let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
-      label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
+      label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
       label.textColor = UIColor(red: 242/255, green: 224/255, blue: 201/255, alpha: 1)
-      //label.text = dateFormatter.string(from: Date())
-      label.text = "distance !!!"
+      label.text = "Distance..."
       label.textAlignment = .left
       return label
   }()
@@ -43,11 +42,10 @@ class FetchedRunDetailVC: UIViewController {
   fileprivate lazy var durationLabel: UILabel = {
       let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
-      label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+      label.font = UIFont.systemFont(ofSize: 32, weight: .semibold)
       label.textColor = UIColor(red: 242/255, green: 224/255, blue: 201/255, alpha: 1)
-      //label.text = dateFormatter.string(from: Date())
-      label.text = "distance !!!"
-      label.textAlignment = .right
+      label.text = "Duration..."
+      label.textAlignment = .left
       return label
   }()
   
@@ -55,7 +53,7 @@ class FetchedRunDetailVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .orange
+    //view.backgroundColor = .orange
     setupUI()
   }
   
@@ -75,10 +73,10 @@ class FetchedRunDetailVC: UIViewController {
       distanceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
       distanceLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -640).isActive = true
     
-      durationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 140).isActive = true
+      durationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 180).isActive = true
       durationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
       durationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-      durationLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -640).isActive = true
+      durationLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -600).isActive = true
     
   }
   
