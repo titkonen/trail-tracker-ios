@@ -103,15 +103,18 @@ extension FetchedRunsVC {
     // empty now
   }
   
-  ///Push content to Detail View
-//  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//    print("tapped")
-//    let noteDetailController = RunDetailsViewController()
+  ///Push content to Detail View FetchedRunDetailVC
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    print("tapped")
+    let noteDetailController = FetchedRunDetailVC()
 //    let noteForRow = self.run[indexPath.row]
 //    noteDetailController.runData = noteForRow
-//
-//    navigationController?.pushViewController(noteDetailController, animated: true)
-//  }
+
+    let location = fetchedResultsController.object(at: indexPath)
+    noteDetailController.runData = location
+    
+    navigationController?.pushViewController(noteDetailController, animated: true)
+  }
 
   
 }

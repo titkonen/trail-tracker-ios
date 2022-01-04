@@ -336,6 +336,34 @@
             </objects>
             <point key="canvasLocation" x="-442.02898550724643" y="-923.4375"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hbU-zu-OV4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ALw-ER-icf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="g9D-Za-zvr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bWa-Qu-WlL"/>
+                        <viewControllerLayoutGuide type="bottom" id="xGN-es-Si8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H9A-Fg-3kq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FetchedRun DetailVC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jg-pr-Krt">
+                                <rect key="frame" x="52" y="81" width="310" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xfm-Ow-Jdm"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-7262.3188405797109" y="-923.4375"/>
+        </scene>
         <!--Fetched Runs-->
         <scene sceneID="XxP-LB-PDV">
             <objects>
@@ -353,7 +381,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="edy-es-7gn" kind="push" identifier="RunDetailsViewController" id="8Vv-1E-Uvq"/>
+                                    <segue destination="g9D-Za-zvr" kind="push" identifier="FetchedRunDetailVC" id="09x-vL-AsF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -553,7 +581,6 @@ Send emails to our address: kirijaki@icloud.com and we will answer for you as so
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oBx-ZB-XRA"/>
         <segue reference="pw0-CR-YcC"/>
     </inferredMetricsTieBreakers>
     <resources>

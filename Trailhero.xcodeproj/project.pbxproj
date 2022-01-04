@@ -15,6 +15,7 @@
 		0FE2AFA7277DDC9B00DADD45 /* Run+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA3277DDC9B00DADD45 /* Run+CoreDataProperties.swift */; };
 		0FE2AFA8277DDC9B00DADD45 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA4277DDC9B00DADD45 /* Location+CoreDataClass.swift */; };
 		0FE2AFA9277DDC9B00DADD45 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2AFA5277DDC9B00DADD45 /* Location+CoreDataProperties.swift */; };
+		0FF2468827842EB6009C691A /* FetchedRunDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF2468727842EB4009C691A /* FetchedRunDetailVC.swift */; };
 		180924821EF33DE2007CF38F /* MulticolorPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924811EF33DE2007CF38F /* MulticolorPolyline.swift */; };
 		180924851EF434F3007CF38F /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924841EF434F3007CF38F /* Badge.swift */; };
 		180924871EF4369B007CF38F /* BadgeStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180924861EF4369B007CF38F /* BadgeStatus.swift */; };
@@ -46,6 +47,7 @@
 		0FE2AFA3277DDC9B00DADD45 /* Run+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Run+CoreDataProperties.swift"; path = "Trailhero/Run+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0FE2AFA4277DDC9B00DADD45 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "Trailhero/Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0FE2AFA5277DDC9B00DADD45 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "Trailhero/Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0FF2468727842EB4009C691A /* FetchedRunDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedRunDetailVC.swift; sourceTree = "<group>"; };
 		180924811EF33DE2007CF38F /* MulticolorPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticolorPolyline.swift; sourceTree = "<group>"; };
 		180924841EF434F3007CF38F /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		180924861EF4369B007CF38F /* BadgeStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeStatus.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				1809248C1EF43E84007CF38F /* BadgeDetailsViewController.swift */,
 				0F1FCE64268C56E9009AEB84 /* SavedTrailsViewController.swift */,
 				0FDDD9D3268DCA2D002B3F6B /* SavedTrailsDetailsVC.swift */,
+				0FF2468727842EB4009C691A /* FetchedRunDetailVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				18CF26EF1E80291E0097F88C /* NewRunViewController.swift in Sources */,
 				0FE2AFA7277DDC9B00DADD45 /* Run+CoreDataProperties.swift in Sources */,
 				180924851EF434F3007CF38F /* Badge.swift in Sources */,
+				0FF2468827842EB6009C691A /* FetchedRunDetailVC.swift in Sources */,
 				18888DD91E7F1D940038A3AF /* CoreDataStack.swift in Sources */,
 				187AF9A91EF3170700C2B8E7 /* LocationManager.swift in Sources */,
 				18888DCB1E7F0FA80038A3AF /* MoonRunner.xcdatamodeld in Sources */,
