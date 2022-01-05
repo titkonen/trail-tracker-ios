@@ -62,6 +62,21 @@ class CoreDataStack {
     }
   }
   
+  /// For NewRunViewController needs >
+//  class func saveContext3 () {
+//    let context = persistentContainer.viewContext
+//
+//    guard context.hasChanges else {
+//      return
+//    }
+//
+//    do {
+//      try managedContext.save()
+//    } catch let error as NSError {
+//      print("Unresolved error \(error), \(error.userInfo)")
+//    }
+//  }
+  
   /*
   static let persistentContainer: NSPersistentContainer = {
     let container = NSPersistentContainer(name: "MoonRunner")

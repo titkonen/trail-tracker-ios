@@ -96,7 +96,6 @@ class SavedTrailsDetailsVC: UIViewController, UINavigationControllerDelegate {
   }
   
   // MARK: MAP FUNCTIONS
-  
   private func mapRegion() -> MKCoordinateRegion? {
     guard
       let locations = run.locations,

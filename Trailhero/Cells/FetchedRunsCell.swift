@@ -10,16 +10,26 @@ class FetchedRunsCell: UITableViewCell {
             previewLabel.text = String(runData.duration) + " sec"
             dateLabel.text = dateFormatter.string(from: runData.timestamp ?? Date())
           
-            
+          mapPoints.text = String(format: "%.1f",runData.locations!)
           
             print("didSet loaded")
             print(runData.distance)
             print(runData.duration)
             print(runData.timestamp ?? Date())
-            print(runData.locations)
+          print(runData.locations as Any)
         }
     }
     
+  // MARK: Prototyping Fetching the MapPoints
+  fileprivate var mapPoints: UILabel = {
+      let label = UILabel()
+      label.text = "mapPoints"
+      label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+      label.textColor = .white
+      label.textAlignment = .right
+      return label
+  }()
+  
     /// Note title = Distance
     fileprivate var noteTitle: UILabel = {
         let label = UILabel()
@@ -50,7 +60,7 @@ class FetchedRunsCell: UITableViewCell {
     
     /// horizontal stack view
     fileprivate lazy var horizontalStackView: UIStackView = {
-        let s = UIStackView(arrangedSubviews: [noteTitle, previewLabel, UIView()])
+        let s = UIStackView(arrangedSubviews: [noteTitle, previewLabel, mapPoints, UIView()])
         s.axis = .horizontal
         s.spacing = 20
         s.alignment = .leading
@@ -75,7 +85,6 @@ class FetchedRunsCell: UITableViewCell {
         verticalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         verticalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         verticalStackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        
     }
     
     required init?(coder: NSCoder) {
