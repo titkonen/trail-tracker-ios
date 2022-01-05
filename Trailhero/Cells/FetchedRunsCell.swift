@@ -9,6 +9,14 @@ class FetchedRunsCell: UITableViewCell {
             noteTitle.text = String(format: "%.1f",runData.distance) + " m"
             previewLabel.text = String(runData.duration) + " sec"
             dateLabel.text = dateFormatter.string(from: runData.timestamp ?? Date())
+          
+            
+          
+            print("didSet loaded")
+            print(runData.distance)
+            print(runData.duration)
+            print(runData.timestamp ?? Date())
+            print(runData.locations)
         }
     }
     
