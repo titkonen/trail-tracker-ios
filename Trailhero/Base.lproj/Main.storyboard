@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="AVU-st-sAN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fsv-5d-LjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fN-iYC" userLabel="Map Container View">
@@ -221,9 +221,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="uBb-oE-18m" kind="relationship" relationship="viewControllers" id="5VM-YX-X4F"/>
-                        <segue destination="drb-hw-iAg" kind="relationship" relationship="viewControllers" id="9jH-V4-UoC"/>
-                        <segue destination="vPX-MQ-3kd" kind="relationship" relationship="viewControllers" id="H8Z-h5-eWj"/>
                         <segue destination="4gT-sM-eoy" kind="relationship" relationship="viewControllers" id="Msp-3d-u9R"/>
+                        <segue destination="vPX-MQ-3kd" kind="relationship" relationship="viewControllers" id="H8Z-h5-eWj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Noc-nr-lsx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -235,7 +234,7 @@
             <objects>
                 <tableViewController id="cka-AN-IXM" userLabel="SavedTrails" customClass="SavedTrailsViewController" customModule="Trailhero" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9JN-dx-uh0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -290,7 +289,7 @@
                         <viewControllerLayoutGuide type="bottom" id="iEl-hu-ECD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dcp-iK-Dh3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PÖÖ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcN-IG-a2H">
@@ -413,7 +412,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ltd-8n-Bk9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="FetchedRunsCell" id="hvV-Wf-haj">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -611,6 +610,9 @@ Send emails to our address: kirijaki@icloud.com and we will answer for you as so
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.1215686275" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0039215686269999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -623,7 +625,7 @@ Send emails to our address: kirijaki@icloud.com and we will answer for you as so
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pw0-CR-YcC"/>
+        <segue reference="5VM-YX-X4F"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
