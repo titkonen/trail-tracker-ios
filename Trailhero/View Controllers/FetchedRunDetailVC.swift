@@ -29,8 +29,8 @@ class FetchedRunDetailVC: UIViewController {
   }()
   
   // MARK: Prototyping Fetching the MapPoints
-  fileprivate lazy var mapPoints: UITextView = {
-      let label = UITextView()
+  fileprivate lazy var mapPoints: UILabel = {
+      let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
       label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
       label.textColor = UIColor(red: 242/255, green: 224/255, blue: 201/255, alpha: 1)
@@ -121,7 +121,7 @@ class FetchedRunDetailVC: UIViewController {
       durationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
       durationLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -600).isActive = true
     
-      mapPoints.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+      mapPoints.topAnchor.constraint(equalTo: view.topAnchor, constant: 220).isActive = true
       mapPoints.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
       mapPoints.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
       mapPoints.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -580).isActive = true
